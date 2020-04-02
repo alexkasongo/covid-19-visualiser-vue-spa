@@ -1,24 +1,25 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <Summary />
   </div>
 </template>
 
 <script>
+import Summary from '@/components/data/Summary'
+
 export default {
   name: 'Home',
   props: {
     msg: String
   },
+  components: {
+    Summary
+  },
   data() {
     return{
-        covidData: null,
+
     }
-  },
-  mounted () {
-    axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => (this.info = response))
   }
 }
 </script>
