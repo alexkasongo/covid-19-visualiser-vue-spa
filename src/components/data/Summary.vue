@@ -1,11 +1,7 @@
 <template>
-  <div class="hello">
+  <div class="chart">
     <h1>Keeping Up With The Covid</h1>
-    <h4>with Aleko</h4>
     <canvas id="planet-chart"></canvas>
-    <div v-for="event in updateSummary" :key="event.componentKey">
-      <!-- <p>{{ event.Country }}</p> -->
-    </div>
   </div>
 </template>
 
@@ -64,5 +60,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.chart {
+  height: 1000vh;
+}
 </style>

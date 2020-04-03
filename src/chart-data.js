@@ -12,18 +12,15 @@ for (var i = 0; i < summaryData.length; i++) {
     totalDeaths.push(summaryData[i].TotalDeaths)
 }
 
-console.log(`chart-data.js - 9 - yohh`, totalConfirmed);
-
-
 export const planetChartData = {
-    type: 'line',
+    type: 'horizontalBar',
     data: {
       labels: countries,
-    //   labels: ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'],
       datasets: [
         { // one line graph
           label: 'Number of Confirmed Cases',
           data: totalConfirmed,
+        //   barThickness: 40,
           backgroundColor: [
             'rgba(54,73,93,.5)', // Blue
             'rgba(54,73,93,.5)',
@@ -44,7 +41,7 @@ export const planetChartData = {
             '#36495d',
             '#36495d',
           ],
-          borderWidth: 3
+          borderWidth: 1
         },
         // another line graph
         { 
@@ -56,21 +53,29 @@ export const planetChartData = {
           borderColor: [
             '#47b784',
           ],
-          borderWidth: 3
+          borderWidth: 2
         }
       ]
     },
     options: {
-      responsive: true,
+    //   responsive: true,
       lineTension: 1,
+      maintainAspectRatio: false,
       scales: {
         yAxes: [{
           ticks: {
             beginAtZero: true,
             padding: 25,
+            autoSkip: false,
           }
         }]
-      }
+      },
+      legend: {
+            display: true,
+            labels: {
+                fontColor: 'rgb(255, 99, 132)'
+            }
+        }
     }
   }
   
