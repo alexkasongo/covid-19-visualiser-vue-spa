@@ -7,10 +7,10 @@ const totalConfirmed = []
 const totalDeaths = []
 
 if (summaryData) {
-    console.log(`chart-data.js - 5 - works bro`);
+    console.log(`chart-data.js - 5 - works bro`, summaryData);
     
     for (var i = 0; i < summaryData.length; i++) {
-        console.log(`chart-data.js - 8 - variable`, summaryData[i]);
+        console.log(`chart-data.js - 8 - FIRE>>><<<`, summaryData[i]);
         countries.push(summaryData[i].Country)
         totalConfirmed.push(summaryData[i].TotalConfirmed)
         totalDeaths.push(summaryData[i].TotalDeaths)

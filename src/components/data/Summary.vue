@@ -30,8 +30,10 @@ export default {
         let summaryData = [];
 
         for (let country of response.data.Countries) {
-          summaryData.push(country);
-          this.$store.dispatch("updateSummary", summaryData);
+          if (country) {
+            summaryData.push(country);
+            this.$store.dispatch("updateSummary", summaryData);
+          }
         }
       }
     );
