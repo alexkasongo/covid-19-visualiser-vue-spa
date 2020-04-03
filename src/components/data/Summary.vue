@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>Keeping Up With The Covid</h1>
+    <h4>with Aleko</h4>
     <canvas id="planet-chart"></canvas>
     <div v-for="event in updateSummary" :key="event.componentKey">
       <!-- <p>{{ event.Country }}</p> -->
@@ -10,7 +11,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-// import { mapState, mapMutations, mapActions, mapGetters } from "@/store/index";
 import Chart from 'chart.js';
 import planetChartData from '@/chart-data.js';
 
