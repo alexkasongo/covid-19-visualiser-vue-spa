@@ -1,6 +1,7 @@
 <template>
   <div class="chart">
     <h1>Keeping Up With The Covid</h1>
+    <h4 class="chart__type">Global Summary Chart</h4>
     <canvas id="planet-chart"></canvas>
   </div>
 </template>
@@ -62,5 +63,9 @@ export default {
 <style scoped lang="scss">
 .chart {
   height: 1000vh;
+
+  &__type {
+    margin: 0px;
+  }
 }
 </style>

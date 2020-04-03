@@ -12,6 +12,16 @@ for (var i = 0; i < summaryData.length; i++) {
     totalDeaths.push(summaryData[i].TotalDeaths)
 }
 
+// get random color for fills
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 export const planetChartData = {
     type: 'horizontalBar',
     data: {
@@ -21,16 +31,8 @@ export const planetChartData = {
           label: 'Number of Confirmed Cases',
           data: totalConfirmed,
         //   barThickness: 40,
-          backgroundColor: [
-            'rgba(54,73,93,.5)', // Blue
-            'rgba(54,73,93,.5)',
-            'rgba(54,73,93,.5)',
-            'rgba(54,73,93,.5)',
-            'rgba(54,73,93,.5)',
-            'rgba(54,73,93,.5)',
-            'rgba(54,73,93,.5)',
-            'rgba(54,73,93,.5)'
-          ],
+            // fillColor : getRandomColor(),   
+          backgroundColor: getRandomColor(),
           borderColor: [
             '#36495d',
             '#36495d',
@@ -47,18 +49,15 @@ export const planetChartData = {
         { 
           label: 'Number of Confirmed Deaths',
           data: totalDeaths,
-          backgroundColor: [
-            'rgba(71, 183,132,.5)', // Green
-          ],
+          backgroundColor: '#000',
           borderColor: [
-            '#47b784',
+            '#000',
           ],
           borderWidth: 2
         }
       ]
     },
     options: {
-    //   responsive: true,
       lineTension: 1,
       maintainAspectRatio: false,
       scales: {
