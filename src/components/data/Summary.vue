@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
     <h1>Aleko</h1>
-    <!-- <div v-for="event in updateSummary" :key="event.componentKey">
-    </div> -->
+    <div v-for="event in updateSummary" :key="event.componentKey">
+      <p>{{ event.Country }}</p>
+    </div>
   </div>
 </template>
 
