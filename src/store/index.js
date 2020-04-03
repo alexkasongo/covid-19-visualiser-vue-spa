@@ -18,23 +18,12 @@ export default new Vuex.Store({
     },
   },
   actions: {
-  /* SUMMARYS STATE
-  ================================== */
-
-  // updateSummary: ({commit, getters}, summaryData) => {
-  //   if (getters.checkIfStatusChanged(stateData.status) === 'offline') {
-  //     commit('STATUS_OFFLINE', stateData);
-  //   } else {
-  //     commit('STATUS_ONLINE', stateData);
-  //   }
-  // },
-
   updateSummary: (context, summaryData) => {
-    context.commit('UPDATE_SUMMARY', summaryData)
-  },
-
-  /* PIPELINE
-  ================================== */
+    if (summaryData) {
+        console.log(`index.js - 23 - aleko`);
+        context.commit('UPDATE_SUMMARY', summaryData)
+      }
+    }
   },
   modules: {
   }

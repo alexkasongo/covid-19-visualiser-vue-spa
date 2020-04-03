@@ -1,15 +1,20 @@
 import store from './store'
 
 const summaryData = store.getters['summaryFeed'];
-let countries = []
-let totalConfirmed = []
-let totalDeaths = []
 
-for (var i = 0; i < summaryData.length; i++) {
-    console.log(`chart-data.js - 8 - variable`, summaryData[i]);
-    countries.push(summaryData[i].Country)
-    totalConfirmed.push(summaryData[i].TotalConfirmed)
-    totalDeaths.push(summaryData[i].TotalDeaths)
+const countries = []
+const totalConfirmed = []
+const totalDeaths = []
+
+if (summaryData) {
+    console.log(`chart-data.js - 5 - works bro`);
+    
+    for (var i = 0; i < summaryData.length; i++) {
+        console.log(`chart-data.js - 8 - variable`, summaryData[i]);
+        countries.push(summaryData[i].Country)
+        totalConfirmed.push(summaryData[i].TotalConfirmed)
+        totalDeaths.push(summaryData[i].TotalDeaths)
+    }
 }
 
 // get random color for fills
