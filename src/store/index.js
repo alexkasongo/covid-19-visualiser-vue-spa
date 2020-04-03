@@ -31,7 +31,6 @@ export default new Vuex.Store({
 
   updateSummary: (context, summaryData) => {
     context.commit('UPDATE_SUMMARY', summaryData)
-    console.log(`index.js - 34 - vuex`, summaryData);
   },
 
   /* PIPELINE

@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <img class="logo" alt="Vue logo" src="https://images.unsplash.com/photo-1584168054713-0d212ed95783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80">
+    <!-- <img class="logo" alt="Vue logo" src="https://images.unsplash.com/photo-1584168054713-0d212ed95783?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"> -->
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <Home msg="Welcome to Aleko's Covid-19 statistics"/>
+    <!-- <Home msg="Welcome to Aleko's Covid-19 statistics"/> -->
+    <Home/>
     <Summary />
   </div>
 </template>

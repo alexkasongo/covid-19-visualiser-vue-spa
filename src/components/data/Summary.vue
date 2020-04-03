@@ -1,8 +1,9 @@
 <template>
   <div class="hello">
-    <h1>Aleko</h1>
+    <h1>Keeping Up With The Covid</h1>
+    <canvas id="planet-chart"></canvas>
     <div v-for="event in updateSummary" :key="event.componentKey">
-      <p>{{ event.Country }}</p>
+      <!-- <p>{{ event.Country }}</p> -->
     </div>
   </div>
 </template>
@@ -10,6 +11,8 @@
 <script>
 import { mapGetters } from "vuex";
 // import { mapState, mapMutations, mapActions, mapGetters } from "@/store/index";
+import Chart from 'chart.js';
+import planetChartData from '@/chart-data.js';
 
 export default {
   name: 'Summary',
@@ -19,7 +22,8 @@ export default {
   data() {
     return{
         summary: null,
-        componentKey: 0
+        componentKey: 0,
+        planetChartData: planetChartData,
     }
   },
   mounted () {
@@ -33,11 +37,21 @@ export default {
           this.$store.dispatch("updateSummary", summaryData);
         }
       }
-    )
+    );
+    this.createChart('planet-chart', this.planetChartData);
   },
   methods: {
     forceRerender() {
       this.componentKey += 1;
+    },
+    createChart(chartId, chartData) {
+      const ctx = document.getElementById(chartId);
+      // eslint-disable-next-line no-unused-vars
+      const myChart = new Chart(ctx, {
+        type: chartData.type,
+        data: chartData.data,
+        options: chartData.options,
+      });
     }
   },
   computed: {
