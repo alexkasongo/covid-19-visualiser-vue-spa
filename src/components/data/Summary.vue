@@ -9,7 +9,7 @@
 <script>
 import { mapGetters } from "vuex";
 import Chart from 'chart.js';
-import planetChartData from '@/chart-data.js';
+import summaryChart from '@/chart-data.js';
 
 export default {
   name: 'Summary',
@@ -20,7 +20,7 @@ export default {
     return{
         summary: null,
         componentKey: 0,
-        planetChartData: planetChartData,
+        summaryChart: summaryChart,
     }
   },
   mounted () {
@@ -35,7 +35,8 @@ export default {
         }
       }
     );
-    this.createChart('planet-chart', this.planetChartData);
+    //create chart
+    this.createChart('planet-chart', this.summaryChart);
   },
   methods: {
     forceRerender() {

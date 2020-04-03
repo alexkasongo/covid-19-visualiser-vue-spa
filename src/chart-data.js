@@ -22,7 +22,7 @@ function getRandomColor() {
     return color;
 }
 
-export const planetChartData = {
+export const summaryChart = {
     type: 'horizontalBar',
     data: {
       labels: countries,
@@ -78,4 +78,4 @@ export const planetChartData = {
     }
   }
   
-  export default planetChartData;
+  export default summaryChart;
