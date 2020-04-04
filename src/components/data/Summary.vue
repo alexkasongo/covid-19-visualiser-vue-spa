@@ -59,6 +59,9 @@ export default {
         updateSummary: "summaryFeed"
     })
   },
+  // created() {
+  //     this.$store.dispatch('fetchVisits')
+  // },
 }
 </script>
 
