@@ -44,17 +44,26 @@ export default {
       .then(response => {
         let summaryData = [];
 
+        const countries = []
+        const totalConfirmed = []
+        const totalDeaths = []
+
         for (let country of response.data.Countries) {
-          if (country) {
             summaryData.push(country);
-            this.$store.dispatch("updateSummary", summaryData);
-          }
         }
+            
+        for (var i = 0; i < summaryData.length; i++) {
+          // console.log(`Summary.vue - 68 - variable`, summaryData[i]);
+          countries.push(summaryData[i].Country)
+          totalConfirmed.push(summaryData[i].TotalConfirmed)
+          totalDeaths.push(summaryData[i].TotalDeaths)
+        }
+
+        console.log(`Summary.vue - 70 - variable`, countries);
       }
     );
-    //create chart
-    // this.createChart('summary-chart', this.summaryChart);
 
+    // console.log(`Summary.vue - 73 - variable`, countries);
 
     var chart = this.$refs.chart;
       var ctx = chart.getContext("2d");
@@ -63,6 +72,7 @@ export default {
           type: 'bar',
           data: {
               labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+              // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
               datasets: [{
                   label: '# of Votes',
                   data: [12, 19, 3, 5, 2, 3],
@@ -101,10 +111,7 @@ export default {
     ...mapGetters({
         updateSummary: "summaryFeed"
     })
-  },
-  // created() {
-  //     this.$store.dispatch('fetchVisits')
-  // },
+  }
 }
 </script>
 

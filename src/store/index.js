@@ -14,7 +14,8 @@ export default new Vuex.Store({
   },
   mutations: {
     UPDATE_SUMMARY: (state, summaryData) => {
-      Vue.set(state, 'summaryFeed', [...summaryData]);
+      // Vue.set(state, 'summaryFeed', [...summaryData]);
+      state.summaryFeed.push(summaryData);
     },
   },
   actions: {

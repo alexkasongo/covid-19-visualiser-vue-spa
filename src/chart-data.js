@@ -1,18 +1,18 @@
-import store from './store'
+// import store from './store'
 // import axios from 'axios'
     
-const summaryData = store.getters['summaryFeed'];
+// const summaryData = store.getters['summaryFeed'];
 
-const countries = []
-const totalConfirmed = []
-const totalDeaths = []
+// const countries = []
+// const totalConfirmed = []
+// const totalDeaths = []
 
     
-for (var i = 0; i < summaryData.length; i++) {
-    countries.push(summaryData[i].Country)
-    totalConfirmed.push(summaryData[i].TotalConfirmed)
-    totalDeaths.push(summaryData[i].TotalDeaths)
-}
+// for (var i = 0; i < summaryData.length; i++) {
+//     countries.push(summaryData[i].Country)
+//     totalConfirmed.push(summaryData[i].TotalConfirmed)
+//     totalDeaths.push(summaryData[i].TotalDeaths)
+// }
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -48,7 +48,7 @@ for (var i = 0; i < summaryData.length; i++) {
     
 // get random color for fills
 function getRandomColor() {
-  console.log(`chart-data.js - 51 - this is being called`, summaryData);
+  // console.log(`chart-data.js - 51 - this is being called`, summaryData);
     var letters = '0123456789ABCDEF'.split('');
     var color = '#';
     for (var i = 0; i < 6; i++ ) {
@@ -60,7 +60,7 @@ function getRandomColor() {
 export const summaryChart = {
     type: 'horizontalBar',
     data: {
-      labels: countries,
+      // labels: countries,
       datasets: [
         { // one line graph
             barPercentage: .2,
@@ -68,7 +68,7 @@ export const summaryChart = {
             maxBarThickness: 8,
             minBarLength: 2,
             label: 'Number of Confirmed Cases',
-            data: totalConfirmed,
+            // data: totalConfirmed,
             backgroundColor: getRandomColor(),
             borderColor: [
                 '#36495d',
@@ -85,7 +85,7 @@ export const summaryChart = {
         // another line graph
         { 
           label: 'Number of Confirmed Deaths',
-          data: totalDeaths,
+          // data: totalDeaths,
           backgroundColor: '#000',
           borderColor: [
             '#000',
