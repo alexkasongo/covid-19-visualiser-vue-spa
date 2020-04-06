@@ -1,27 +1,27 @@
-// import store from './store'
-import axios from 'axios'
+import store from './store'
+// import axios from 'axios'
     
-// const summaryData = store.getters['summaryFeed'];
-
-// const countries = []
-// const totalConfirmed = []
-// const totalDeaths = []
-
-    
-// for (var i = 0; i < summaryData.length; i++) {
-//     countries.push(summaryData[i].Country)
-//     totalConfirmed.push(summaryData[i].TotalConfirmed)
-//     totalDeaths.push(summaryData[i].TotalDeaths)
-// }
-
-/////////
-
-const theOne = []
-console.log(`chart-data.js - 35 - eish`, theOne);
+const summaryData = store.getters['summaryFeed'];
 
 const countries = []
 const totalConfirmed = []
 const totalDeaths = []
+
+    
+for (var i = 0; i < summaryData.length; i++) {
+    countries.push(summaryData[i].Country)
+    totalConfirmed.push(summaryData[i].TotalConfirmed)
+    totalDeaths.push(summaryData[i].TotalDeaths)
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+// const theOne = []
+// console.log(`chart-data.js - 35 - eish`, theOne);
+
+// const countries = []
+// const totalConfirmed = []
+// const totalDeaths = []
 
 // for (var i = 0; i < theOne.length; i++) {
 //     console.log(`chart-data.js - 42 - variable`, theOne);
@@ -30,24 +30,25 @@ const totalDeaths = []
 //     totalDeaths.push(theOne[i].TotalDeaths)
 // }
 
-axios
-    .get('https://api.covid19api.com/summary')
-    .then(response => {
-        const summaryData = [];
-
-        for (let country of response.data.Countries) {
-            if (country) {
-                summaryData.push(country);
-                theOne.push(country);
-            }
-        }
-    }
-);
+// axios
+//     .get('https://api.covid19api.com/summary')
+//     .then(response => {
+//         const summaryData = [];
+//         theOne.push(summaryData) 
+//         for (let country of response.data.Countries) {
+//             if (country) {
+//                 // console.log(`chart-data.js - 40 - variable`, country);
+//                 summaryData.push(country);
+//             }
+//         }
+//     }
+// );
 
 
     
 // get random color for fills
 function getRandomColor() {
+  console.log(`chart-data.js - 51 - this is being called`, summaryData);
     var letters = '0123456789ABCDEF'.split('');
     var color = '#';
     for (var i = 0; i < 6; i++ ) {
@@ -62,22 +63,24 @@ export const summaryChart = {
       labels: countries,
       datasets: [
         { // one line graph
-          label: 'Number of Confirmed Cases',
-          data: totalConfirmed,
-        //   barThickness: 40,
-            // fillColor : getRandomColor(),   
-          backgroundColor: getRandomColor(),
-          borderColor: [
-            '#36495d',
-            '#36495d',
-            '#36495d',
-            '#36495d',
-            '#36495d',
-            '#36495d',
-            '#36495d',
-            '#36495d',
-          ],
-          borderWidth: 1
+            barPercentage: .2,
+            barThickness: 60,
+            maxBarThickness: 8,
+            minBarLength: 2,
+            label: 'Number of Confirmed Cases',
+            data: totalConfirmed,
+            backgroundColor: getRandomColor(),
+            borderColor: [
+                '#36495d',
+                '#36495d',
+                '#36495d',
+                '#36495d',
+                '#36495d',
+                '#36495d',
+                '#36495d',
+                '#36495d',
+            ],
+            borderWidth: 1
         },
         // another line graph
         { 
