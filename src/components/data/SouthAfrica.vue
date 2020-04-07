@@ -61,8 +61,6 @@ export default {
             america.push(data);
         }
 
-        // console.log(`America.vue - 63 - variable`, america);
-        
         // second data loop, goes deeper and allows selecting of countries, total deaths etc
 
         for (var i = 0; i < america.length; i++) {
