@@ -5,7 +5,6 @@
     <div class="home__global">
       <Global />
     </div>
-    <!-- <Summary /> -->
     <div class="home__grid">
       <div class="home__southAfrica">
         <h2 class="home__southAfrica--title">South Africa</h2>
@@ -15,12 +14,16 @@
         <h2 class="home__america--title">United States - Washington</h2>
         <America />
       </div>
+      <div class="home__summary">
+        <h2 class="home__america--all">All Countries</h2>
+        <Summary />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// import Summary from '@/components/data/Summary'
+import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
 import SouthAfrica from '@/components/data/SouthAfrica'
 import Global from '@/components/data/Global'
@@ -31,7 +34,7 @@ export default {
     msg: String
   },
   components: {
-    // Summary,
+    Summary,
     America,
     SouthAfrica,
     Global
@@ -90,6 +93,12 @@ export default {
     border-radius: 4px;
     margin: 10px 0px 10px 0px;
     color: #fff;
+  }
+  .home__america--all {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 0px 0px 10px 0px;
   }
 
 }

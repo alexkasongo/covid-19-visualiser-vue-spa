@@ -1,7 +1,5 @@
 <template>
-  <div class="chart">
-    <h4 class="chart__type">Global Summary Chart</h4>
-    <!-- <canvas id="summary-chart"></canvas> -->
+  <div class="summary">
     <canvas ref="chart"></canvas>
   </div>
 </template>
@@ -135,8 +133,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.chart {
+.summary {
+
   height: 2000vh;
+  background-color: whitesmoke;
+  border-radius: 4px;
 
   &__type {
     margin: 0px;
