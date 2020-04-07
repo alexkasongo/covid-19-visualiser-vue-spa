@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Keeping Up With The Covid</h1>
-    <h2 class="global__type">Global Summary</h2>
+    <h2 class="home__title">Global Summary</h2>
     <div class="home__global">
       <Global />
     </div>
@@ -47,6 +47,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .home {
+  max-width: 1200px;
+  margin: 0px auto;
 
   &__global {
     display: flex;
@@ -56,7 +58,16 @@ export default {
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 1440px;
+    grid-gap: 10px;
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+  
+  &__title {
+    background-color: seagreen;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0px;
   }
 
 }

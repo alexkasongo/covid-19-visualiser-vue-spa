@@ -2,15 +2,15 @@
   <div class="global">
     <div class="global__totalConfirmed global--card">
       <h2>Total Confirmed Cases</h2>
-      <h2>{{this.globalSummary[0 ].TotalConfirmed}}</h2>
+      <h2>{{this.globalSummary[0].TotalConfirmed}}</h2>
     </div>
     <div class="global__totalDeaths global--card">
       <h2>Total Confirmed Deaths</h2>
-      <h2>{{this.globalSummary[0 ].TotalDeaths}}</h2>
+      <h2>{{this.globalSummary[0].TotalDeaths}}</h2>
     </div>
     <div class="global__totalRecovered global--card">
       <h2>Total Confirmed Recoveries</h2>
-      <h2>{{this.globalSummary[0 ].TotalRecovered}}</h2>
+      <h2>{{this.globalSummary[0].TotalRecovered}}</h2>
     </div>
   </div>
 </template>
@@ -48,7 +48,7 @@ export default {
     this.$http
       .get('https://api.covid19api.com/summary')
       .then(response => {
-        console.log(`Global.vue - 43 - variable`, response.data.Global);
+        // console.log(`Global.vue - 43 - variable`, response.data.Global);
 
         const globalSum = response.data.Global
 
@@ -68,12 +68,14 @@ export default {
 <style scoped lang="scss">
 .global {
 
-  // display: flex;
-  // justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  width: 1200px;
+
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 20px;
 
   &__totalConfirmed {
     background-color: yellowgreen;

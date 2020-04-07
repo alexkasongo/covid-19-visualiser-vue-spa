@@ -1,5 +1,5 @@
 <template>
-  <div class="chart">
+  <div class="america">
     <!-- <h1>Keeping Up With The Covid</h1> -->
     <canvas ref="chart"></canvas>
   </div>
@@ -89,7 +89,7 @@ export default {
             data: {
                 labels: date,
                 datasets: [{
-                    label: 'Number of Confirmed Cases',
+                    label: 'Confirmed Cases',
                     // data: totalConfirmed,
                     data: confirmed,
                     backgroundColor: '#14EBE0',
@@ -100,18 +100,18 @@ export default {
                 },
                 // another line graph
                 { 
-                  label: 'Number of Confirmed Deaths',
+                  label: 'Confirmed Deaths',
                   data: deaths,
-                  backgroundColor: '#eee',
+                  backgroundColor: '#FF6384',
                   // borderColor: [
                   //   '#000',
                   // ],
                   borderWidth: 2
                 },
                 { 
-                  label: 'Number of Confirmed Recoveries',
+                  label: 'Confirmed Recoveries',
                   data: recovered,
-                  backgroundColor: '#0BEFB2',
+                  backgroundColor: '#eee',
                   // borderColor: [
                   //   '#000',
                   // ],
@@ -146,7 +146,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.chart {
+.america {
+
+  background-color: #343951;
+  border-radius: 8px;
 
   &__type {
     margin: 0px;
