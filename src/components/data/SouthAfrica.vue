@@ -83,14 +83,14 @@ export default {
         var ctx = chart.getContext("2d");
         // eslint-disable-next-line no-unused-vars
         var myChart = new Chart(ctx, {
-            type: 'pie',
+            type: 'horizontalBar',
             data: {
                 labels: date,
                 datasets: [{
                     label: 'Number of Confirmed Cases',
                     // data: totalConfirmed,
                     data: confirmed,
-                    backgroundColor: coloR,
+                    backgroundColor: '#E37216',
                     // borderColor: [
                     //     '#222'
                     // ],
