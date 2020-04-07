@@ -21,7 +21,6 @@ export default new Vuex.Store({
   actions: {
   updateSummary: (context, summaryData) => {
     if (summaryData) {
-        console.log(`index.js - 23 - in the store`);
         context.commit('UPDATE_SUMMARY', summaryData)
       }
     }
