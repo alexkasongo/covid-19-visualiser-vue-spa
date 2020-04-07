@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Keeping Up With The Covid</h1>
-    <!-- <h1>{{ msg }}</h1> -->
+    <Global />
     <!-- <Summary /> -->
     <div class="home__grid">
       <div class="home__southAfrica">
@@ -20,6 +20,7 @@
 // import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
 import SouthAfrica from '@/components/data/SouthAfrica'
+import Global from '@/components/data/Global'
 
 export default {
   name: 'Home',
@@ -29,7 +30,8 @@ export default {
   components: {
     // Summary,
     America,
-    SouthAfrica
+    SouthAfrica,
+    Global
   },
   data() {
     return{
