@@ -69,12 +69,12 @@ export default {
           confirmed.push(america[i].Confirmed)
           deaths.push(america[i].Deaths)
           recovered.push(america[i].Recovered)
-          date.push(america[i].Date)
+          // format date
+          date.push(this.moment(america[i].Date).format('LLLL'))
 
           coloR.push(dynamicColors());
         }
         
-        console.log(`America.vue - 76 - variable`, confirmed);
         // NOTE currently not being used but should be used if app grows
         // dispatch state/data to store for state manangenet
         // this.$store.dispatch("updateSummary", americaFeed);
@@ -90,7 +90,7 @@ export default {
                     label: 'Number of Confirmed Cases',
                     // data: totalConfirmed,
                     data: confirmed,
-                    backgroundColor: '#E37216',
+                    backgroundColor: '#D96788',
                     // borderColor: [
                     //     '#222'
                     // ],
@@ -100,7 +100,7 @@ export default {
                 { 
                   label: 'Number of Confirmed Deaths',
                   data: deaths,
-                  backgroundColor: '#222',
+                  backgroundColor: '#664F40',
                   // borderColor: [
                   //   '#000',
                   // ],
@@ -109,7 +109,7 @@ export default {
                 { 
                   label: 'Number of Confirmed Recoveries',
                   data: recovered,
-                  backgroundColor: '#00ab66',
+                  backgroundColor: '#9BBE11',
                   // borderColor: [
                   //   '#000',
                   // ],
