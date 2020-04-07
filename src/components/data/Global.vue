@@ -1,16 +1,20 @@
 <template>
   <div class="global">
     <div class="global__totalConfirmed global--card">
-      <h2>Total Confirmed Cases</h2>
-      <h2>{{this.globalSummary[0].TotalConfirmed}}</h2>
+      <h2 class="global__title">Total Confirmed Cases</h2>
+      <h2 class="global__number">{{this.globalSummary[0].TotalConfirmed}}</h2>
     </div>
     <div class="global__totalDeaths global--card">
-      <h2>Total Confirmed Deaths</h2>
-      <h2>{{this.globalSummary[0].TotalDeaths}}</h2>
+      <h2 class="global__title">Total Confirmed Deaths</h2>
+      <h2 class="global__number">{{this.globalSummary[0].TotalDeaths}}</h2>
     </div>
     <div class="global__totalRecovered global--card">
-      <h2>Total Confirmed Recoveries</h2>
-      <h2>{{this.globalSummary[0].TotalRecovered}}</h2>
+      <h2 class="global__title">Total Confirmed Recoveries</h2>
+      <h2 class="global__number">{{this.globalSummary[0].TotalRecovered}}</h2>
+    </div>
+    <div class="global__newConfirmed global--card">
+      <h2 class="global__title">Total Confirmed Recoveries</h2>
+      <h2 class="global__number">{{this.globalSummary[0].NewConfirmed}}</h2>
     </div>
   </div>
 </template>
@@ -67,14 +71,14 @@ export default {
 <style scoped lang="scss">
 .global {
 
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
 
   width: 1200px;
 
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 
   &__totalConfirmed {
     background-color: yellowgreen;
@@ -85,14 +89,30 @@ export default {
   &__totalRecovered {
     background-color: salmon;
   }
+  &__newConfirmed {
+    background-color: yellow;
+  }
 
   &--card {
     padding: 20px;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__type {
     margin: 0px;
+  }
+
+  &__title {
+    max-width: 206px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  &__number {
+    font-size: 60px;
+    margin: 0px 0px 0px 0px;
   }
 
 }

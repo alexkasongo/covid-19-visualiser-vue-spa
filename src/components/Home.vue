@@ -8,11 +8,11 @@
     <!-- <Summary /> -->
     <div class="home__grid">
       <div class="home__southAfrica">
-        <h2>South Africa</h2>
+        <h2 class="home__southAfrica--title">South Africa</h2>
         <SouthAfrica />
       </div>
       <div class="home__america">
-        <h2 class="chart__type">United States - Washington</h2>
+        <h2 class="home__america--title">United States - Washington</h2>
         <America />
       </div>
     </div>
@@ -64,10 +64,27 @@ export default {
   }
   
   &__title {
-    background-color: seagreen;
+    background-color: #343951;
     padding: 10px;
     border-radius: 8px;
-    margin: 0px;
+    margin: 0px 0px 10px 0px;
+    color: #fff;
+  }
+
+  .home__southAfrica--title {
+    background-color: #343951;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0px 10px 0px;
+    color: #fff;
+  }
+  
+  .home__america--title {
+    background-color: #343951;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0px 10px 0px;
+    color: #fff;
   }
 
 }
