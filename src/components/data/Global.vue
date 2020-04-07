@@ -95,7 +95,7 @@ export default {
 
   &--card {
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -148,8 +148,8 @@ export default {
 <style scoped lang="scss">
 .america {
 
-  background-color: #343951;
-  border-radius: 8px;
+  background-color: #2D3143;
+  border-radius: 4px;
 
   &__type {
     margin: 0px;

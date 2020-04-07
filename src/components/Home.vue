@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Keeping Up With The Covid</h1>
+    <h1 class="home__logo">Keeping Up With The Covid</h1>
     <h2 class="home__title">Global Summary</h2>
     <div class="home__global">
       <Global />
@@ -47,6 +47,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .home {
+  
   max-width: 1200px;
   margin: 0px auto;
 
@@ -62,27 +63,31 @@ export default {
     max-width: 1200px;
     margin: 0px auto;
   }
+
+  &__logo {
+    color: #fff;
+  }
   
   &__title {
-    background-color: #343951;
+    background-color: #2D3143;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 4px;
     margin: 0px 0px 10px 0px;
     color: #fff;
   }
 
   .home__southAfrica--title {
-    background-color: #343951;
+    background-color: #2D3143;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 4px;
     margin: 10px 0px 10px 0px;
     color: #fff;
   }
   
   .home__america--title {
-    background-color: #343951;
+    background-color: #2D3143;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 4px;
     margin: 10px 0px 10px 0px;
     color: #fff;
   }
