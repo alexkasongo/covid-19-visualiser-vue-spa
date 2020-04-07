@@ -70,7 +70,7 @@ export default {
           confirmed.push(america[i].Confirmed)
           deaths.push(america[i].Deaths)
           recovered.push(america[i].Recovered)
-          date.push(america[i].Date)
+          date.push(this.moment(america[i].Date).format('LLLL'))  
 
           coloR.push(dynamicColors());
         }
@@ -119,7 +119,7 @@ export default {
                 ]
             },
             options: {
-              // maintainAspectRatio: false,
+              maintainAspectRatio: false,
                 scales: {
                     yAxes: [{
                         ticks: {

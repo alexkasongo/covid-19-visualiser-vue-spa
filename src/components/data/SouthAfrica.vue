@@ -1,5 +1,5 @@
 <template>
-  <div class="chart">
+  <div class="southAfrica">
     <h2 class="chart__type">South Africa</h2>
     <canvas ref="chart"></canvas>
   </div>
@@ -62,7 +62,6 @@ export default {
         }
 
         // second data loop, goes deeper and allows selecting of countries, total deaths etc
-
         for (var i = 0; i < america.length; i++) {
           confirmed.push(america[i].Confirmed)
           deaths.push(america[i].Deaths)
@@ -88,7 +87,7 @@ export default {
                     label: 'Number of Confirmed Cases',
                     // data: totalConfirmed,
                     data: confirmed,
-                    backgroundColor: '#D96788',
+                    backgroundColor: '#4BC0C0',
                     // borderColor: [
                     //     '#222'
                     // ],
@@ -98,7 +97,7 @@ export default {
                 { 
                   label: 'Number of Confirmed Deaths',
                   data: deaths,
-                  backgroundColor: '#664F40',
+                  backgroundColor: '#FF6384',
                   // borderColor: [
                   //   '#000',
                   // ],
@@ -107,7 +106,7 @@ export default {
                 { 
                   label: 'Number of Confirmed Recoveries',
                   data: recovered,
-                  backgroundColor: '#9BBE11',
+                  backgroundColor: '#eee',
                   // borderColor: [
                   //   '#000',
                   // ],
@@ -116,7 +115,7 @@ export default {
                 ]
             },
             options: {
-              // maintainAspectRatio: false,
+              maintainAspectRatio: false,
                 scales: {
                     yAxes: [{
                         ticks: {
@@ -142,8 +141,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.chart {
-
+.southAfrica {
+  height: 500px;
   &__type {
     margin: 0px;
   }
