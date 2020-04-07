@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <h1>Keeping Up With The Covid</h1>
-    <Global />
+    <h2 class="global__type">Global Summary</h2>
+    <div class="home__global">
+      <Global />
+    </div>
     <!-- <Summary /> -->
     <div class="home__grid">
       <div class="home__southAfrica">
@@ -44,6 +47,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .home {
+
+  &__global {
+    display: flex;
+    justify-content: center;
+  }
 
   &__grid {
     display: grid;
