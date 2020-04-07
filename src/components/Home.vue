@@ -18,6 +18,10 @@
         <h2 class="home__america--all">All Countries</h2>
         <Summary />
       </div>
+      <div class="home__news">
+        <h2 class="home__america--all">News</h2>
+        <News />
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +31,7 @@ import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
 import SouthAfrica from '@/components/data/SouthAfrica'
 import Global from '@/components/data/Global'
+import News from '@/components/data/News'
 
 export default {
   name: 'Home',
@@ -37,7 +42,8 @@ export default {
     Summary,
     America,
     SouthAfrica,
-    Global
+    Global,
+    News,
   },
   data() {
     return{
