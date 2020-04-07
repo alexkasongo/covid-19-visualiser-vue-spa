@@ -2,14 +2,22 @@
   <div class="home">
     <h1>Keeping Up With The Covid</h1>
     <!-- <h1>{{ msg }}</h1> -->
-    <SouthAfrica />
-    <America />
-    <Summary />
+    <!-- <Summary /> -->
+    <div class="home__grid">
+      <div class="home__southAfrica">
+        <h2>South Africa</h2>
+        <SouthAfrica />
+      </div>
+      <div class="home__america">
+        <h2 class="chart__type">United States - Washington</h2>
+        <America />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Summary from '@/components/data/Summary'
+// import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
 import SouthAfrica from '@/components/data/SouthAfrica'
 
@@ -19,7 +27,7 @@ export default {
     msg: String
   },
   components: {
-    Summary,
+    // Summary,
     America,
     SouthAfrica
   },
@@ -33,5 +41,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.home {
 
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1440px;
+  }
+
+}
 </style>

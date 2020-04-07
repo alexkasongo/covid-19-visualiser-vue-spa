@@ -1,6 +1,5 @@
 <template>
   <div class="chart">
-    <!-- <h1>Keeping Up With The Covid</h1> -->
     <h4 class="chart__type">Global Summary Chart</h4>
     <!-- <canvas id="summary-chart"></canvas> -->
     <canvas ref="chart"></canvas>

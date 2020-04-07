@@ -1,7 +1,6 @@
 <template>
   <div class="chart">
     <!-- <h1>Keeping Up With The Covid</h1> -->
-    <h2 class="chart__type">United States</h2>
     <canvas ref="chart"></canvas>
   </div>
 </template>
@@ -9,6 +8,7 @@
 <script>
 import { mapGetters } from "vuex";
 import Chart from 'chart.js';
+// import America from '@/components/data/America';
 
 export default {
   name: 'America',
@@ -39,9 +39,8 @@ export default {
     this.$http
       .get('https://api.covid19api.com/live/country/united-states/status/confirmed')
       .then(response => {
-        console.log(`America.vue - 42 - variable`, response);
         let america = [];
-        // let americaFeed = []
+        let washington = []
         let coloR = [];
 
         // generate dynamic colors
@@ -61,21 +60,27 @@ export default {
         for (let data of response.data) {
             america.push(data);
         }
+        
+        washington = america.filter(function(item) {
+            return item.Province === "Washington"
+          }
+        );
 
-        // console.log(`America.vue - 63 - variable`, america);
+        console.log(`America.vue - 72 - variable`, washington);
+
+        // console.log(`America.vue - 63 - variable`, washington);
         
         // second data loop, goes deeper and allows selecting of countries, total deaths etc
 
-        for (var i = 0; i < america.length; i++) {
-          confirmed.push(america[i].Confirmed)
-          deaths.push(america[i].Deaths)
-          recovered.push(america[i].Recovered)
-          date.push(this.moment(america[i].Date).format('LLLL'))  
+        for (var i = 0; i < washington.length; i++) {
+          confirmed.push(washington[i].Confirmed)
+          deaths.push(washington[i].Deaths)
+          recovered.push(washington[i].Recovered)
+          date.push(this.moment(washington[i].Date).format('LLLL'))  
 
           coloR.push(dynamicColors());
         }
         
-        console.log(`America.vue - 76 - variable`, confirmed);
         // NOTE currently not being used but should be used if app grows
         // dispatch state/data to store for state manangenet
         // this.$store.dispatch("updateSummary", americaFeed);
@@ -84,14 +89,14 @@ export default {
         var ctx = chart.getContext("2d");
         // eslint-disable-next-line no-unused-vars
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'horizontalBar',
             data: {
                 labels: date,
                 datasets: [{
                     label: 'Number of Confirmed Cases',
                     // data: totalConfirmed,
                     data: confirmed,
-                    backgroundColor: coloR,
+                    backgroundColor: '#14EBE0',
                     // borderColor: [
                     //     '#222'
                     // ],
@@ -101,7 +106,7 @@ export default {
                 { 
                   label: 'Number of Confirmed Deaths',
                   data: deaths,
-                  backgroundColor: '#222',
+                  backgroundColor: '#eee',
                   // borderColor: [
                   //   '#000',
                   // ],
@@ -110,7 +115,7 @@ export default {
                 { 
                   label: 'Number of Confirmed Recoveries',
                   data: recovered,
-                  backgroundColor: '#00ab66',
+                  backgroundColor: '#0BEFB2',
                   // borderColor: [
                   //   '#000',
                   // ],
@@ -119,7 +124,7 @@ export default {
                 ]
             },
             options: {
-              maintainAspectRatio: false,
+              // maintainAspectRatio: false,
                 scales: {
                     yAxes: [{
                         ticks: {

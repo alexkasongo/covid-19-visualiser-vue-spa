@@ -1,6 +1,5 @@
 <template>
   <div class="southAfrica">
-    <h2 class="chart__type">South Africa</h2>
     <canvas ref="chart"></canvas>
   </div>
 </template>
@@ -38,7 +37,6 @@ export default {
     this.$http
       .get('https://api.covid19api.com/live/country/south-africa/status/confirmed')
       .then(response => {
-        console.log(`America.vue - 42 - variable`, response);
         let america = [];
         // let americaFeed = []
         let coloR = [];
@@ -115,7 +113,7 @@ export default {
                 ]
             },
             options: {
-              maintainAspectRatio: false,
+              // maintainAspectRatio: false,
                 scales: {
                     yAxes: [{
                         ticks: {
