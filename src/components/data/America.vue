@@ -66,10 +66,6 @@ export default {
           }
         );
 
-        console.log(`America.vue - 72 - variable`, washington);
-
-        // console.log(`America.vue - 63 - variable`, washington);
-        
         // second data loop, goes deeper and allows selecting of countries, total deaths etc
 
         for (var i = 0; i < washington.length; i++) {
