@@ -1,20 +1,22 @@
 <template>
   <div class="global">
-    <div class="global__totalConfirmed global--card">
-      <h2 class="global__title">Total Confirmed Cases</h2>
-      <h2 class="global__number">{{this.globalSummary[0].TotalConfirmed}}</h2>
-    </div>
-    <div class="global__totalDeaths global--card">
-      <h2 class="global__title">Total Confirmed Deaths</h2>
-      <h2 class="global__number">{{this.globalSummary[0].TotalDeaths}}</h2>
-    </div>
-    <div class="global__totalRecovered global--card">
-      <h2 class="global__title">Total Confirmed Recoveries</h2>
-      <h2 class="global__number">{{this.globalSummary[0].TotalRecovered}}</h2>
-    </div>
-    <div class="global__newConfirmed global--card">
-      <h2 class="global__title">Total Confirmed Recoveries</h2>
-      <h2 class="global__number">{{this.globalSummary[0].NewConfirmed}}</h2>
+    <div class="global__grid" v-for="data in this.globalSummary" :key="data.id">
+      <div class="global__totalConfirmed global--card">
+        <h2 class="global__title">Total Confirmed Cases</h2>
+        <h2 class="global__number">{{data.TotalConfirmed}}</h2>
+      </div>
+      <div class="global__totalDeaths global--card">
+        <h2 class="global__title">Total Confirmed Deaths</h2>
+        <h2 class="global__number">{{data.TotalDeaths}}</h2>
+      </div>
+      <div class="global__totalRecovered global--card">
+        <h2 class="global__title">Total Confirmed Recoveries</h2>
+        <h2 class="global__number">{{data.TotalRecovered}}</h2>
+      </div>
+      <div class="global__newConfirmed global--card">
+        <h2 class="global__title">Total Confirmed Recoveries</h2>
+        <h2 class="global__number">{{data.NewConfirmed}}</h2>
+      </div>
     </div>
   </div>
 </template>
@@ -31,7 +33,8 @@ export default {
   data() {
     return{
         summary: null,
-        componentKey: 0
+        componentKey: 0,
+        globalData: this.globalSummary
     }
   },
   methods: {
@@ -71,14 +74,13 @@ export default {
 <style scoped lang="scss">
 .global {
 
-  // display: flex;
-  // justify-content: space-between;
-
   width: 1200px;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
 
   &__totalConfirmed {
     background-color: yellowgreen;
