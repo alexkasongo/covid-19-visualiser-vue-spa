@@ -1,12 +1,14 @@
 <template>
   <div class="news">
-      <h1 class="news__grid">Aleko</h1>
+      <!-- <h1 class="news__grid">Aleko</h1> -->
     <div class="news__grid" v-for="article in this.allArticles" :key="article.id">
       <div class="news__card">
-        <p>{{article.description}}</p>
+        <h2 class="news__subTitle">{{article.title}}</h2>
+        <img class="news__image" :src="article.urlToImage" :alt="article.urlToImage">
+        <p>{{article.description}}<a :href="article.url">more</a></p>
+        {{ moment(article.publishedAt).startOf('day').fromNow() }}
       </div>
     </div>
-    <!-- {{this.allArticles}} -->
   </div>
 </template>
 
@@ -76,7 +78,22 @@ export default {
 <style scoped lang="scss">
 .news{
   &__grid {
-    color: red;
+    color: #fff;
+  }
+
+  &__card {
+    max-width: 600px;
+    text-align: center;
+    margin: 0px auto 10px auto;
+    background-color: #2D3143;
+  }
+
+  &__image {
+    max-width: 580px;
+  }
+
+  &__subTitle {
+    margin: 0px 0px 10px 0px;
   }
 }
 </style>

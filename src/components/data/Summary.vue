@@ -82,7 +82,6 @@ export default {
                 datasets: [{
                     label: 'Number of Confirmed Cases',
                     data: totalConfirmed,
-                    // data: [12, 19, 3, 5, 2, 3],
                     backgroundColor: coloR,
                     borderColor: [
                         'rgba(255,99,132,1)',
@@ -112,7 +111,7 @@ export default {
                     yAxes: [{
                         ticks: {
                             beginAtZero: true,
-                            padding: 25,
+                            padding: 10,
                             autoSkip: false,
                         }
                     }]
@@ -135,7 +134,7 @@ export default {
 <style scoped lang="scss">
 .summary {
 
-  height: 2000vh;
+  height: 1000vh;
   background-color: whitesmoke;
   border-radius: 4px;
 
