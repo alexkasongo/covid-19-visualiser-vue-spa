@@ -48,7 +48,6 @@ export default {
     this.$http
       .get('https://api.covid19api.com/summary')
       .then(response => {
-        // console.log(`Global.vue - 43 - variable`, response.data.Global);
 
         const globalSum = response.data.Global
 
