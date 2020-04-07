@@ -1,10 +1,12 @@
 <template>
   <div class="news">
       <h1 class="news__grid">Aleko</h1>
-    <div class="news__grid" v-for="article in this.newsFeed" :key="article.id">
-    <!-- <div class="news__grid" v-for="article in this.newsFeed" :key="article.id"> -->
-      {{artice}}
+    <div class="news__grid" v-for="article in this.allArticles" :key="article.id">
+      <div class="news__card">
+        <p>{{article.description}}</p>
+      </div>
     </div>
+    <!-- {{this.allArticles}} -->
   </div>
 </template>
 
@@ -23,7 +25,7 @@ export default {
         componentKey: 0,
         globalData: this.globalSummary,
         newsKey: process.env.VUE_APP_NEWS_API_KEY,
-        newsFeed: this.allArticles
+        news: this.allArticles
     }
   },
   methods: {
@@ -58,13 +60,13 @@ export default {
           newsArticles.push(article)
         }
         
-        this.$store.dispatch("allNews", newsArticles);
+        this.$store.dispatch("newsArticles", newsArticles);
       }
     );
   },
   computed: {
     ...mapGetters({
-        allArticles: "articlesFeed"
+        allArticles: "newsFeed"
     })
   }
 }

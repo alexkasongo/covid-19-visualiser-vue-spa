@@ -10,13 +10,15 @@ export default new Vuex.Store({
     newsFeed:[]
   },
   getters: {
-    summaryFeed: state => () => {
+    summaryFeed: state => {
       return state.summaryFeed
     },
-    globalFeed: state => () => {
+    globalFeed: state => {
+      console.log(`index.js - 17 - variable`, state);
       return state.globalFeed
     },
-    newsState: state => () => {
+    newsFeed: state => {
+      console.log(`index.js - 20 - variable`, state);
       return state.newsFeed
     }
   },
@@ -44,8 +46,7 @@ export default new Vuex.Store({
           context.commit('GLOBAL_SUMMARY', globalData)
         }
       },
-      allNews: (context, newsData) => {
-        // console.log(`index.js - 48 - variable`, newsData);
+      newsArticles: (context, newsData) => {
         if (newsData) {
           context.commit('NEWS_ARTICLES', newsData)
         }
