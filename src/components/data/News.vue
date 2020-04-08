@@ -3,7 +3,9 @@
       <!-- <h1 class="news__grid">Aleko</h1> -->
     <div class="news__grid" v-for="article in this.allArticles" :key="article.id">
       <div class="news__card">
-        <h2 class="news__subTitle">{{article.title}}</h2>
+        <a class="news__subTitle-link" :href="article.url">
+          <h2 class="news__subTitle">{{article.title}}</h2>
+        </a>
         <div class="image-box">
           <a :href="article.url">
             <img :src="article.urlToImage" :alt="article.urlToImage" />
@@ -108,7 +110,17 @@ export default {
   }
 
   &__link {
-    color: #ADD8E6;
+     a {
+       color: #ADD8E6;
+     }
+  }
+
+  &__subTitle-link {
+    color: #fff;
+    text-decoration: none;
+    a {
+      color: #fff;
+    }
   }
   
   &__date {
