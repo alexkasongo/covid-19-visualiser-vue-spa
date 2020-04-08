@@ -20,7 +20,7 @@
       </div> -->
       <div class="washington__chart">
         <h2>Chart</h2>
-        <!-- {{this.updateSummary | filterName}} -->
+        {{this.updateSummary}}
         <!-- {{this.filteredSummary}} -->
       </div>
     </div>
@@ -38,22 +38,11 @@ export default {
   },
   data() {
     return{
-        summary: null,
-        componentKey: 0,
-        filteredSummary: []
-    }
-  },
-  filters: {
-  filterName(value) {
-      return value.filter(function(item) {
-        return item.Province === "Washington"
-      })// thing to transform
+        filteredSummary: [],
+        statesData: null
     }
   },
   methods: {
-    forceRerender() {
-      this.componentKey += 1;
-    },
     createChart(chartId, chartData) {
       const ctx = document.getElementById(chartId);
       // eslint-disable-next-line no-unused-vars
@@ -62,9 +51,17 @@ export default {
         data: chartData.data,
         options: chartData.options,
       });
+    },
+    doSomething () {
+      console.log(`Washington.vue - 55 - variable`, this.filtered);
     }
   },
-  mounted () {},
+  mounted () {
+    this.doSomething()
+
+    // add state to local storage here
+    this.statesData = this.updateSummary
+  },
   computed: {
     ...mapGetters({
         updateSummary: "summaryFeed",

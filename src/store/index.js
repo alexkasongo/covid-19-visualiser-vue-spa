@@ -14,8 +14,7 @@ export default new Vuex.Store({
       return state.summaryFeed[0]
     },
     filtered: state => {
-      return state.summaryFeed[0].filter(function(item) {
-        // console.log(`index.js - 18 - variable`, item);
+      return state.summaryFeed.filter(function(item) {
         return item.Province === "Washington"
       }
     );
@@ -31,6 +30,7 @@ export default new Vuex.Store({
   mutations: {
     UPDATE_SUMMARY: (state, summaryData) => {
       state.summaryFeed.push(summaryData);
+      // Vue.set(state, 'summaryFeed', [...summaryData]);
     },
     GLOBAL_SUMMARY: (state, globalData) => {
       // Vue.set(state, 'globalFeed', [...globalData]);
