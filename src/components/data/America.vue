@@ -1,28 +1,29 @@
 <template>
   <div class="america">
-    <div class="america__washington">
-      <div class="america__confirmed" v-for="event in this.washingtonSum" :key="event.id">
-        <div class="america__washington-total">
-          <h2>Total Cases</h2>
-          <p>{{ event.Confirmed }}</p>
-        </div>
-        <div class="america__washington-sum">
-          <div class="america__washington-sum-recovered">
-            <p>{{ event.Recovered }}</p> 
+    <!-- <div class="america__left">
+      <div class="america__washington">
+        <div class="america__confirmed" v-for="event in this.washingtonSum" :key="event.id">
+          <div class="america__washington-total">
+            <h2>Total Cases</h2>
+            <p>{{ event.Confirmed }}</p>
           </div>
-          <div class="america__washington-sum-active">
-            <p>{{ event.Deaths }}</p> 
+          <div class="america__washington-sum">
+            <div class="america__washington-sum-recovered">
+              <p>{{ event.Recovered }}</p> 
+            </div>
+            <div class="please"></div>
+            <div class="america__washington-sum-active">
+              <p>{{ event.Deaths }}</p> 
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="america__chart">
-      <h2>Chart</h2>
-    </div>
-    <div v-for="state in this.test" :key="state.id">
-      <div class="america__states">
-        <p>{{state.Province}} ({{state.Confirmed}} Cases)</p>
+      <div class="america__chart">
+        <h2>Chart</h2>
       </div>
+    </div> -->
+    <div class="america__states" v-for="(state, index) in this.statesData" :key="index">
+      <p>{{state.Province}} ({{state.Confirmed}} Cases)</p>
     </div>
   </div>
 </template>
@@ -42,7 +43,7 @@ export default {
         summary: null,
         componentKey: 0,
         washingtonSum: null,
-        test: null
+        statesData: null
     }
   },
   methods: {
@@ -110,9 +111,10 @@ export default {
         // NOTE currently not being used but should be used if app grows
         // dispatch state/data to store for state manangenet
         this.$store.dispatch("updateSummary", america);
+        
 
         // add state to local storage here
-        this.test = this.updateSummary
+        this.statesData = this.updateSummary
 
         // var chart = this.$refs.chart;
         // var ctx = chart.getContext("2d");

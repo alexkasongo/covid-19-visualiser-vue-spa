@@ -13,6 +13,12 @@ export default new Vuex.Store({
     summaryFeed: state => {
       return state.summaryFeed[0]
     },
+    filterd: function () {
+      return this.updateSummary.filter(function(item) {
+        return item.Province === "Washington"
+      }
+    );
+  },
     globalFeed: state => {
       return state.globalFeed
     },

@@ -9,6 +9,10 @@
       <span>Florida Department of Health, Division of Disease Control and Health Protection</span>
     </h2>
     <div class="home__united-states">
+      <Washington />
+      <div>
+        <h2>middle</h2>
+      </div>
       <America />
     </div>
     <div class="home__grid">
@@ -39,6 +43,7 @@ import America from '@/components/data/America'
 import SouthAfrica from '@/components/data/SouthAfrica'
 import Global from '@/components/data/Global'
 import News from '@/components/data/News'
+import Washington from '@/components/data/Washington'
 
 export default {
   name: 'Home',
@@ -51,6 +56,7 @@ export default {
     SouthAfrica,
     Global,
     News,
+    Washington
   },
   data() {
     return{
@@ -114,6 +120,11 @@ export default {
     border-radius: 4px;
     margin: 0px 0px 10px 0px;
     color: #fff;
+  }
+
+  &__united-states {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
   }
 
 }
