@@ -1,12 +1,12 @@
 <template>
   <div class="america">
-    <div class="america__grid" v-for="state in this.updateSummary" :key="state.id">
-      <div class="america__summary">
-        
-      </div>
-      <div class="america__chart">
-        <!-- <canvas ref="chart"></canvas> -->
-      </div>
+    <div class="america__grid">
+      {{ washingtonSum }}
+    </div>
+    <div class="america__chart">
+      <h2>Chart</h2>
+    </div>
+    <div v-for="state in this.updateSummary" :key="state.id">
       <div class="america__states">
         <p>{{state.Province}} ({{state.Confirmed}} Cases)</p>
       </div>
@@ -28,6 +28,7 @@ export default {
     return{
         summary: null,
         componentKey: 0,
+        washingtonSum: null
     }
   },
   methods: {
@@ -51,7 +52,7 @@ export default {
         let america = [];
         let washington = []
         let coloR = [];
-
+        
         // generate dynamic colors
         var dynamicColors = function() {
             var r = Math.floor(Math.random() * 255);
@@ -70,6 +71,11 @@ export default {
             america.push(data);
         }
         
+        this.washingtonSum = america.filter(function(item) {
+            return item.Province === "Washington"
+          }
+        );
+
         washington = america.filter(function(item) {
             return item.Province === "Washington"
           }
@@ -90,67 +96,57 @@ export default {
         // dispatch state/data to store for state manangenet
         this.$store.dispatch("updateSummary", america);
 
-        var chart = this.$refs.chart;
-        var ctx = chart.getContext("2d");
-        Chart.defaults.global.defaultFontColor = '#eee';
-        // eslint-disable-next-line no-unused-vars
-        var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                labels: date,
-                datasets: [{
-                  label: 'Confirmed Cases',
-                  // data: totalConfirmed,
-                  data: confirmed,
-                  backgroundColor: '#14EBE0',
-                  // borderColor: [
-                  //     '#222'
-                  // ],
-                  // borderWidth: 2,
-                  minBarLength: 2,
-                },
-                // another line graph
-                { 
-                  label: 'Confirmed Deaths',
-                  data: deaths,
-                  backgroundColor: '#FF6384',
-                  // borderColor: [
-                  //   '#000',
-                  // ],
-                  borderWidth: 2
-                },
-                { 
-                  label: 'Confirmed Recoveries',
-                  data: recovered,
-                  backgroundColor: '#eee',
-                  // borderColor: [
-                  //   '#000',
-                  // ],
-                  borderWidth: 2
-                }
-                ]
-            },
-            options: {
-              // maintainAspectRatio: false,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            padding: 25,
-                            autoSkip: false,
-                        }
-                    }]
-                }
-            }
-        });
+        // var chart = this.$refs.chart;
+        // var ctx = chart.getContext("2d");
+        // Chart.defaults.global.defaultFontColor = '#eee';
+        // var myChart = new Chart(ctx, {
+        //     type: 'horizontalBar',
+        //     data: {
+        //         labels: date,
+        //         datasets: [{
+        //           label: 'Confirmed Cases',
+        //           data: confirmed,
+        //           backgroundColor: '#14EBE0',
+        //           minBarLength: 2,
+        //         },
+        //         { 
+        //           label: 'Confirmed Deaths',
+        //           data: deaths,
+        //           backgroundColor: '#FF6384',
+        //           borderWidth: 2
+        //         },
+        //         { 
+        //           label: 'Confirmed Recoveries',
+        //           data: recovered,
+        //           backgroundColor: '#eee',
+        //           borderWidth: 2
+        //         }
+        //         ]
+        //     },
+        //     options: {
+        //         scales: {
+        //             yAxes: [{
+        //                 ticks: {
+        //                     beginAtZero: true,
+        //                     padding: 25,
+        //                     autoSkip: false,
+        //                 }
+        //             }]
+        //         }
+        //     }
+        // });
 
       }
     );
   },
   computed: {
     ...mapGetters({
-        updateSummary: "summaryFeed"
-    })
+        updateSummary: "summaryFeed",
+        washingtonSummary: "washingtonFeed"
+    }),
+    // filteredValue() {
+    //   return this.graphData.filter(data => this.selectedYears.includes(data.YEAR)
+    // } 
   }
 }
 </script>
@@ -165,8 +161,9 @@ export default {
   overflow: auto;
 
   &__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: 400px 400px 400px;
+    // grid-template-columns: 1fr 1fr 1fr;
     // display: flex;
     // justify-content: space-between;
     // height: 500px;

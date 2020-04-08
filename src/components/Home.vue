@@ -5,7 +5,9 @@
     <div class="home__global">
       <Global />
     </div>
-    <h2 class="home__title">United States</h2>
+    <h2 class="home__title">Washington's COVID-19 Data and Surveillance Dashboard <br>
+      <span>Florida Department of Health, Division of Disease Control and Health Protection</span>
+    </h2>
     <div class="home__united-states">
       <America />
     </div>
