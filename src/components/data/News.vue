@@ -5,8 +5,8 @@
       <div class="news__card">
         <h2 class="news__subTitle">{{article.title}}</h2>
         <img class="news__image" :src="article.urlToImage" :alt="article.urlToImage">
-        <p>{{article.description}}<a :href="article.url">more</a></p>
-        {{ moment(article.publishedAt).startOf('day').fromNow() }}
+        <p class="news__description">{{article.description}}<a class="news__link" :href="article.url">more</a></p>
+        <p class="news__date">{{ moment(article.publishedAt).startOf('day').fromNow() }}</p>
       </div>
     </div>
   </div>
@@ -86,6 +86,7 @@ export default {
     text-align: center;
     margin: 0px auto 10px auto;
     background-color: #2D3143;
+    border-radius: 4px;
   }
 
   &__image {
@@ -94,6 +95,21 @@ export default {
 
   &__subTitle {
     margin: 0px 0px 10px 0px;
+    padding: 20px 10px;
+  }
+
+  &__description {
+    text-align: justify;
+    padding: 0px 10px;
+  }
+
+  &__link {
+    color: #ADD8E6;
+  }
+  
+  &__date {
+    text-align: right;
+    padding: 20px;
   }
 }
 </style>

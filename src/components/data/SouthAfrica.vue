@@ -35,7 +35,7 @@ export default {
   },
   mounted () {
     this.$http
-      // .get('https://api.covid19api.com/live/country/south-africa/status/confirmed')
+      .get('https://api.covid19api.com/live/country/south-africa/status/confirmed')
       .then(response => {
         let america = [];
         // let americaFeed = []
