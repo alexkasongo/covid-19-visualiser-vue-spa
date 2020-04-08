@@ -1,7 +1,20 @@
 <template>
   <div class="america">
-    <div class="america__grid">
-      {{ washingtonSum }}
+    <div class="america__washington">
+      <div class="america__confirmed" v-for="event in this.washingtonSum.slice(4)" :key="event.id">
+        <div class="america__washington-total">
+          <h2>Total Cases</h2>
+          <p>{{ event.Confirmed }}</p>
+        </div>
+        <div class="america__washington-sum">
+          <div class="america__washington-sum-recovered">
+            <p>{{ event.Recovered }}</p> 
+          </div>
+          <div class="america__washington-sum-active">
+            <p>{{ event.Deaths }}</p> 
+          </div>
+        </div>
+      </div>
     </div>
     <div class="america__chart">
       <h2>Chart</h2>
@@ -75,6 +88,7 @@ export default {
             return item.Province === "Washington"
           }
         );
+        console.log(`America.vue - 87 - variable`, this.washingtonSum);
 
         washington = america.filter(function(item) {
             return item.Province === "Washington"
