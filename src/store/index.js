@@ -14,10 +14,11 @@ export default new Vuex.Store({
       return state.summaryFeed
     },
     globalFeed: state => {
-      return state.globalFeed.sort((a, b) => (a.events < b.events) ? 1 : -1)
+      return state.globalFeed
     },
     newsFeed: state => {
       return state.newsFeed
+      // return state.newsFeed.sort((a, b) => (a.events < b.events) ? 1 : -1)
     }
   },
   mutations: {

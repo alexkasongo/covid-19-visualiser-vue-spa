@@ -17,14 +17,10 @@ export default {
   data() {
     return{
         summary: null,
-        componentKey: 0,
         summaryChart: summaryChart,
     }
   },
   methods: {
-    forceRerender() {
-      this.componentKey += 1;
-    },
     createChart(chartId, chartData) {
       const ctx = document.getElementById(chartId);
       // eslint-disable-next-line no-unused-vars
