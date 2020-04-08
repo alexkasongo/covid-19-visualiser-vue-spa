@@ -1,14 +1,14 @@
 <template>
   <div class="america">
-    <div class="america__grid">
-      <div class="america__summary" v-for="state in this.updateSummary" :key="state.id">
-        <p>{{state.Country}}</p>
+    <div class="america__grid" v-for="state in this.updateSummary" :key="state.id">
+      <div class="america__summary">
+        
       </div>
       <div class="america__chart">
-        <canvas ref="chart"></canvas>
+        <!-- <canvas ref="chart"></canvas> -->
       </div>
       <div class="america__states">
-        <h2>States</h2>
+        <p>{{state.Province}} ({{state.Confirmed}} Cases)</p>
       </div>
     </div>
   </div>
@@ -28,7 +28,6 @@ export default {
     return{
         summary: null,
         componentKey: 0,
-        americaData: this.updateSummary,
     }
   },
   methods: {
@@ -162,11 +161,21 @@ export default {
 
   background-color: #2D3143;
   border-radius: 4px;
+  height: 500px;
+  overflow: auto;
 
   &__grid {
     display: grid;
-    grid-template-columns: 400px 400px 400px;
-    // grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    // display: flex;
+    // justify-content: space-between;
+    // height: 500px;
+    // overflow: hidden;
+  }
+
+  &__summary {
+    display: flex;
+    flex-direction: column;
   }
 
   &__type {

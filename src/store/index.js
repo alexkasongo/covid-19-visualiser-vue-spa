@@ -11,7 +11,7 @@ export default new Vuex.Store({
   },
   getters: {
     summaryFeed: state => {
-      return state.summaryFeed
+      return state.summaryFeed[0]
     },
     globalFeed: state => {
       return state.globalFeed
