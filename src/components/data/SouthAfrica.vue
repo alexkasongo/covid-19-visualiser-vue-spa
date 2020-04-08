@@ -76,6 +76,7 @@ export default {
 
         var chart = this.$refs.chart;
         var ctx = chart.getContext("2d");
+        Chart.defaults.global.defaultFontColor = '#eee';
         // eslint-disable-next-line no-unused-vars
         var myChart = new Chart(ctx, {
             type: 'horizontalBar',

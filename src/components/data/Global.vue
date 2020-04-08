@@ -14,7 +14,7 @@
         <h2 class="global__number">{{data.TotalRecovered}}</h2>
       </div>
       <div class="global__newConfirmed global--card">
-        <h2 class="global__title">Total Confirmed Recoveries</h2>
+        <h2 class="global__title">New Confirmed Cases</h2>
         <h2 class="global__number">{{data.NewConfirmed}}</h2>
       </div>
     </div>
