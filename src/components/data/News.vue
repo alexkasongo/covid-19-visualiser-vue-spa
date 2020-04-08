@@ -5,9 +5,10 @@
       <div class="news__card">
         <h2 class="news__subTitle">{{article.title}}</h2>
         <div class="image-box">
-          <img :src="article.urlToImage" :alt="article.urlToImage" />
+          <a :href="article.url">
+            <img :src="article.urlToImage" :alt="article.urlToImage" />
+          </a>
         </div>
-        <!-- <img class="news__image img-hover-zoom--quick-zoom" :src="article.urlToImage" :alt="article.urlToImage"> -->
         <p class="news__description">{{article.description}}<a class="news__link" :href="article.url">more</a></p>
         <p class="news__date">{{ moment(article.publishedAt).startOf('day').fromNow() }}</p>
       </div>

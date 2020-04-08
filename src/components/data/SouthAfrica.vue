@@ -86,7 +86,7 @@ export default {
                   label: 'Confirmed Cases',
                   data: confirmed,
                   backgroundColor: '#4BC0C0',
-                  borderWidth: 2,
+                  // borderWidth: 2,
                   minBarLength: 2,
                 },
                 // another line graph

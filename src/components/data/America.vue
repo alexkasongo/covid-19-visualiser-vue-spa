@@ -97,7 +97,7 @@ export default {
                   // borderColor: [
                   //     '#222'
                   // ],
-                  borderWidth: 2,
+                  // borderWidth: 2,
                   minBarLength: 2,
                 },
                 // another line graph
