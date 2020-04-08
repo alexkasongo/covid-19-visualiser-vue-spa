@@ -20,7 +20,7 @@
       </div> -->
       <div class="washington__chart">
         <h2>Chart</h2>
-        {{this.updateSummary | filterName}}
+        <!-- {{this.updateSummary | filterName}} -->
         <!-- {{this.filteredSummary}} -->
       </div>
     </div>
@@ -68,7 +68,7 @@ export default {
   computed: {
     ...mapGetters({
         updateSummary: "summaryFeed",
-        filtered: "filterdSummary"
+        filtered: "filtered"
     }),
   }
 }

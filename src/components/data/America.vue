@@ -68,7 +68,6 @@ export default {
             return item.Province === "Washington"
           }
         );
-        console.log(`America.vue - 87 - variable`, this.washingtonSum);
 
         washington = america.filter(function(item) {
             return item.Province === "Washington"

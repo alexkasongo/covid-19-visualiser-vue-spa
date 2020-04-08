@@ -10,7 +10,8 @@
     </h2>
     <div class="home__united-states">
       <Washington />
-      <SouthAfrica />
+      <!-- <SouthAfrica /> -->
+      <h2>Middle</h2>
       <America />
     </div>
     <div class="home__grid">

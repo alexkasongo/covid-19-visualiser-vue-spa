@@ -13,8 +13,9 @@ export default new Vuex.Store({
     summaryFeed: state => {
       return state.summaryFeed[0]
     },
-    filterd: function () {
-      return this.updateSummary.filter(function(item) {
+    filtered: state => {
+      return state.summaryFeed[0].filter(function(item) {
+        // console.log(`index.js - 18 - variable`, item);
         return item.Province === "Washington"
       }
     );
