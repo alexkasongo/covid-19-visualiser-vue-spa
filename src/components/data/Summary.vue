@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 import Chart from 'chart.js';
 import summaryChart from '@/chart-data.js';
 
@@ -115,11 +114,6 @@ export default {
 
       }
     );
-  },
-  computed: {
-    ...mapGetters({
-        updateSummary: "summaryFeed"
-    })
   }
 }
 </script>

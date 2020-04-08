@@ -1,7 +1,7 @@
 <template>
   <div class="america">
     <div class="america__washington">
-      <div class="america__confirmed" v-for="event in this.washingtonSum.slice(4)" :key="event.id">
+      <div class="america__confirmed" v-for="event in this.washingtonSum" :key="event.id">
         <div class="america__washington-total">
           <h2>Total Cases</h2>
           <p>{{ event.Confirmed }}</p>
@@ -19,7 +19,7 @@
     <div class="america__chart">
       <h2>Chart</h2>
     </div>
-    <div v-for="state in this.updateSummary" :key="state.id">
+    <div v-for="state in this.test" :key="state.id">
       <div class="america__states">
         <p>{{state.Province}} ({{state.Confirmed}} Cases)</p>
       </div>
@@ -41,7 +41,8 @@ export default {
     return{
         summary: null,
         componentKey: 0,
-        washingtonSum: null
+        washingtonSum: null,
+        test: null
     }
   },
   methods: {
@@ -110,6 +111,9 @@ export default {
         // dispatch state/data to store for state manangenet
         this.$store.dispatch("updateSummary", america);
 
+        // add state to local storage here
+        this.test = this.updateSummary
+
         // var chart = this.$refs.chart;
         // var ctx = chart.getContext("2d");
         // Chart.defaults.global.defaultFontColor = '#eee';
@@ -156,7 +160,6 @@ export default {
   computed: {
     ...mapGetters({
         updateSummary: "summaryFeed",
-        washingtonSummary: "washingtonFeed"
     }),
     // filteredValue() {
     //   return this.graphData.filter(data => this.selectedYears.includes(data.YEAR)
