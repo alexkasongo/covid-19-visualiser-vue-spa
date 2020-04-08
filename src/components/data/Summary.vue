@@ -55,6 +55,8 @@ export default {
         const totalConfirmed = []
         const totalDeaths = []
 
+        console.log(`Summary.vue - 58 - variable`, totalConfirmed);
+
         // initial data loop
         for (let country of response.data.Countries) {
             summaryData.push(country);
@@ -74,24 +76,23 @@ export default {
 
         var chart = this.$refs.chart;
         var ctx = chart.getContext("2d");
+        Chart.defaults.global.defaultFontColor = '#eee';
         // eslint-disable-next-line no-unused-vars
         var myChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
                 labels: countries,
                 datasets: [{
-                    label: 'Number of Confirmed Cases',
-                    data: totalConfirmed,
-                    backgroundColor: coloR,
-                    borderColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 2
+                  label: 'Number of Confirmed Cases',
+                  data: totalConfirmed,
+                  backgroundColor: coloR,
+                  // minBarLength: 12,
+                  // borderColor: coloR,
+                  // borderWidth: 2
+                  // barPercentage: 0.1,
+                  // barThickness: 6,
+                  // maxBarThickness: 8,
+                  minBarLength: 2,
                 },
                 // another line graph
                 { 
@@ -103,18 +104,23 @@ export default {
                   ],
                   borderWidth: 2
                 }
-                ]
+              ]
             },
             options: {
               maintainAspectRatio: false,
                 scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            padding: 10,
-                            autoSkip: false,
-                        }
-                    }]
+                  yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        padding: 10,
+                        autoSkip: false,
+                    }
+                  }],
+                  xAxes: [{
+                      gridLines: {
+                        offsetGridLines: true
+                      }
+                  }]
                 }
             }
         });
@@ -135,7 +141,7 @@ export default {
 .summary {
 
   height: 1000vh;
-  background-color: whitesmoke;
+  background-color: #2D3143;
   border-radius: 4px;
 
   &__type {

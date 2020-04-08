@@ -101,10 +101,11 @@ export default {
     color: #fff;
   }
   .home__america--all {
-    background-color: whitesmoke;
+    background-color: #2D3143;
     padding: 10px;
     border-radius: 4px;
     margin: 0px 0px 10px 0px;
+    color: #fff;
   }
 
 }

@@ -90,14 +90,15 @@ export default {
             data: {
                 labels: date,
                 datasets: [{
-                    label: 'Confirmed Cases',
-                    // data: totalConfirmed,
-                    data: confirmed,
-                    backgroundColor: '#14EBE0',
-                    // borderColor: [
-                    //     '#222'
-                    // ],
-                    borderWidth: 2
+                  label: 'Confirmed Cases',
+                  // data: totalConfirmed,
+                  data: confirmed,
+                  backgroundColor: '#14EBE0',
+                  // borderColor: [
+                  //     '#222'
+                  // ],
+                  borderWidth: 2,
+                  minBarLength: 2,
                 },
                 // another line graph
                 { 

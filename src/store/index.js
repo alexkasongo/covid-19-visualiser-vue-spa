@@ -14,11 +14,9 @@ export default new Vuex.Store({
       return state.summaryFeed
     },
     globalFeed: state => {
-      console.log(`index.js - 17 - variable`, state);
-      return state.globalFeed
+      return state.globalFeed.sort((a, b) => (a.events < b.events) ? 1 : -1)
     },
     newsFeed: state => {
-      console.log(`index.js - 20 - variable`, state);
       return state.newsFeed
     }
   },

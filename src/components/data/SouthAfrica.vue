@@ -83,32 +83,23 @@ export default {
             data: {
                 labels: date,
                 datasets: [{
-                    label: 'Confirmed Cases',
-                    // data: totalConfirmed,
-                    data: confirmed,
-                    backgroundColor: '#4BC0C0',
-                    // borderColor: [
-                    //     '#222'
-                    // ],
-                    borderWidth: 2
+                  label: 'Confirmed Cases',
+                  data: confirmed,
+                  backgroundColor: '#4BC0C0',
+                  borderWidth: 2,
+                  minBarLength: 2,
                 },
                 // another line graph
                 { 
                   label: 'Confirmed Deaths',
                   data: deaths,
                   backgroundColor: '#FF6384',
-                  // borderColor: [
-                  //   '#000',
-                  // ],
                   borderWidth: 2
                 },
                 { 
                   label: 'Confirmed Recoveries',
                   data: recovered,
                   backgroundColor: '#eee',
-                  // borderColor: [
-                  //   '#000',
-                  // ],
                   borderWidth: 2
                 }
                 ]
