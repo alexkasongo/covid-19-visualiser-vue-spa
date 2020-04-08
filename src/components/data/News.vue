@@ -4,7 +4,10 @@
     <div class="news__grid" v-for="article in this.allArticles" :key="article.id">
       <div class="news__card">
         <h2 class="news__subTitle">{{article.title}}</h2>
-        <img class="news__image" :src="article.urlToImage" :alt="article.urlToImage">
+        <div class="image-box">
+          <img :src="article.urlToImage" :alt="article.urlToImage" />
+        </div>
+        <!-- <img class="news__image img-hover-zoom--quick-zoom" :src="article.urlToImage" :alt="article.urlToImage"> -->
         <p class="news__description">{{article.description}}<a class="news__link" :href="article.url">more</a></p>
         <p class="news__date">{{ moment(article.publishedAt).startOf('day').fromNow() }}</p>
       </div>
@@ -112,4 +115,24 @@ export default {
     padding: 20px;
   }
 }
+
+.image-box {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 580px;
+}
+.image-box img {
+    max-width: 100%;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+
+.image-box:hover img {
+    transform: scale(1.1);
+}
+
 </style>
