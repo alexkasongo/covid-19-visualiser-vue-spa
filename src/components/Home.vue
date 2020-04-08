@@ -10,9 +10,7 @@
     </h2>
     <div class="home__united-states">
       <Washington />
-      <div>
-        <h2>middle</h2>
-      </div>
+      <SouthAfrica />
       <America />
     </div>
     <div class="home__grid">
@@ -124,7 +122,8 @@ export default {
 
   &__united-states {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-gap: 10px;
   }
 
 }

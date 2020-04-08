@@ -1,27 +1,5 @@
 <template>
   <div class="america">
-    <!-- <div class="america__left">
-      <div class="america__washington">
-        <div class="america__confirmed" v-for="event in this.washingtonSum" :key="event.id">
-          <div class="america__washington-total">
-            <h2>Total Cases</h2>
-            <p>{{ event.Confirmed }}</p>
-          </div>
-          <div class="america__washington-sum">
-            <div class="america__washington-sum-recovered">
-              <p>{{ event.Recovered }}</p> 
-            </div>
-            <div class="please"></div>
-            <div class="america__washington-sum-active">
-              <p>{{ event.Deaths }}</p> 
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="america__chart">
-        <h2>Chart</h2>
-      </div>
-    </div> -->
     <div class="america__states" v-for="(state, index) in this.statesData" :key="index">
       <p>{{state.Province}} ({{state.Confirmed}} Cases)</p>
     </div>
@@ -162,10 +140,7 @@ export default {
   computed: {
     ...mapGetters({
         updateSummary: "summaryFeed",
-    }),
-    // filteredValue() {
-    //   return this.graphData.filter(data => this.selectedYears.includes(data.YEAR)
-    // } 
+    })
   }
 }
 </script>
@@ -179,16 +154,6 @@ export default {
   height: 500px;
   overflow: auto;
 
-  &__grid {
-    // display: grid;
-    // grid-template-columns: 400px 400px 400px;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // display: flex;
-    // justify-content: space-between;
-    // height: 500px;
-    // overflow: hidden;
-  }
-
   &__summary {
     display: flex;
     flex-direction: column;
@@ -198,5 +163,10 @@ export default {
     margin: 0px;
   }
 
+  &__states {
+    text-align: right;
+    padding: 0px 10px 0px 10px;
+    font-size: 14px;
+  }
 }
 </style>
