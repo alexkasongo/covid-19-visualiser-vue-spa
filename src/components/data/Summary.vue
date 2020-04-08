@@ -82,12 +82,6 @@ export default {
                   label: 'Number of Confirmed Cases',
                   data: totalConfirmed,
                   backgroundColor: coloR,
-                  // minBarLength: 12,
-                  // borderColor: coloR,
-                  // borderWidth: 2
-                  // barPercentage: 0.1,
-                  // barThickness: 6,
-                  // maxBarThickness: 8,
                   minBarLength: 2,
                 },
                 // another line graph
