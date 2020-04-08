@@ -1,7 +1,16 @@
 <template>
   <div class="america">
-    <!-- <h1>Keeping Up With The Covid</h1> -->
-    <canvas ref="chart"></canvas>
+    <div class="america__grid">
+      <div class="america__summary" v-for="state in this.updateSummary" :key="state.id">
+        <p>{{state.Country}}</p>
+      </div>
+      <div class="america__chart">
+        <canvas ref="chart"></canvas>
+      </div>
+      <div class="america__states">
+        <h2>States</h2>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,6 +28,7 @@ export default {
     return{
         summary: null,
         componentKey: 0,
+        americaData: this.updateSummary,
     }
   },
   methods: {
@@ -79,7 +89,7 @@ export default {
         
         // NOTE currently not being used but should be used if app grows
         // dispatch state/data to store for state manangenet
-        // this.$store.dispatch("updateSummary", americaFeed);
+        this.$store.dispatch("updateSummary", america);
 
         var chart = this.$refs.chart;
         var ctx = chart.getContext("2d");
@@ -152,6 +162,12 @@ export default {
 
   background-color: #2D3143;
   border-radius: 4px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    // grid-template-columns: 1fr 1fr 1fr;
+  }
 
   &__type {
     margin: 0px;

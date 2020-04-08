@@ -5,6 +5,10 @@
     <div class="home__global">
       <Global />
     </div>
+    <h2 class="home__title">United States</h2>
+    <div class="home__united-states">
+      <America />
+    </div>
     <div class="home__grid">
       <div class="home__southAfrica">
         <h2 class="home__southAfrica--title">South Africa</h2>
@@ -12,7 +16,8 @@
       </div>
       <div class="home__america">
         <h2 class="home__america--title">United States - Washington</h2>
-        <America />
+        <!-- <America /> -->
+        <SouthAfrica />
       </div>
       <div class="home__summary">
         <h2 class="home__america--all">All Countries</h2>
@@ -63,6 +68,7 @@ export default {
   &__global {
     display: flex;
     justify-content: center;
+    margin: 0px 0px 10px 0px;
   }
 
   &__grid {

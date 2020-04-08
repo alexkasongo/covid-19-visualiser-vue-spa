@@ -36,6 +36,7 @@ export default new Vuex.Store({
   },
   actions: {
     updateSummary: (context, summaryData) => {
+      console.log(`index.js - 39 - variable`, summaryData);
       if (summaryData) {
           context.commit('UPDATE_SUMMARY', summaryData)
         }

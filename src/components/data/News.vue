@@ -33,7 +33,7 @@ export default {
         componentKey: 0,
         globalData: this.globalSummary,
         newsKey: process.env.VUE_APP_NEWS_API_KEY,
-        news: this.allArticles
+        news: this.allArticles,
     }
   },
   methods: {
@@ -110,6 +110,7 @@ export default {
   }
 
   &__link {
+    color: #ADD8E6;
      a {
        color: #ADD8E6;
      }

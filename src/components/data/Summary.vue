@@ -51,8 +51,6 @@ export default {
         const totalConfirmed = []
         const totalDeaths = []
 
-        console.log(`Summary.vue - 58 - variable`, totalConfirmed);
-
         // initial data loop
         for (let country of response.data.Countries) {
             summaryData.push(country);
