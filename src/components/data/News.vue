@@ -1,6 +1,5 @@
 <template>
   <div class="news">
-      <!-- <h1 class="news__grid">Aleko</h1> -->
     <div class="news__grid" v-for="article in this.allArticles" :key="article.id">
       <div class="news__card">
         <a class="news__subTitle-link" :href="article.url">
