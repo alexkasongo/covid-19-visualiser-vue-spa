@@ -1,13 +1,31 @@
 <template>
   <div class="america">
-    <div class="america__states" v-for="(state, index) in this.statesData" :key="index">
-      <p>{{state.Province}} ({{state.Confirmed}} Cases)</p>
+    <!-- <div class="washington" v-for="state in filtered.slice(5)" :key="state.id">
+      <div class="washington__confirmed">
+        <h2>Confirmed</h2>
+        {{state.Confirmed}}
+      </div>
+      <div class="washington__confirmed">
+        <h2>Deaths</h2>
+        {{state.Deaths}}
+      </div>
+      <div class="washington__confirmed">
+        <h2>Recovered</h2>
+        {{state.Recovered}}
+      </div>
+    </div> -->
+    {{filteredSum}}
+    <div class="states" v-for="state in updateSummary" :key="state.componentKey">
+      <!-- <div>{{state.Province}} ({{state.Confirmed}} Cases)</div> -->
+      <div class="states__one">
+        {{state.Province}}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 import Chart from 'chart.js';
 // import America from '@/components/data/America';
 
@@ -20,9 +38,9 @@ export default {
     return{
         summary: null,
         componentKey: 0,
-        washingtonSum: null,
-        statesData: null,
-        tester: null
+        // washingtonSum: null,
+        // statesData: [],
+        // tester: []
     }
   },
   methods: {
@@ -44,47 +62,47 @@ export default {
       .get('https://api.covid19api.com/live/country/united-states/status/confirmed')
       .then(response => {
         let america = [];
-        let washington = []
-        let coloR = [];
+        // let washington = []
+        // let coloR = [];
         
         // generate dynamic colors
-        var dynamicColors = function() {
-            var r = Math.floor(Math.random() * 255);
-            var g = Math.floor(Math.random() * 255);
-            var b = Math.floor(Math.random() * 255);
-            return "rgb(" + r + "," + g + "," + b + ")";
-         };
+        // var dynamicColors = function() {
+        //     var r = Math.floor(Math.random() * 255);
+        //     var g = Math.floor(Math.random() * 255);
+        //     var b = Math.floor(Math.random() * 255);
+        //     return "rgb(" + r + "," + g + "," + b + ")";
+        //  };
 
-        const confirmed = []
-        const deaths = []
-        const recovered = []
-        const date = []
+        // const confirmed = []
+        // const deaths = []
+        // const recovered = []
+        // const date = []
 
         // initial data loop
         for (let data of response.data) {
             america.push(data);
         }
         
-        this.washingtonSum = america.filter(function(item) {
-            return item.Province === "Washington"
-          }
-        );
+        // this.washingtonSum = america.filter(function(item) {
+        //     return item.Province === "Washington"
+        //   }
+        // );
 
-        washington = america.filter(function(item) {
-            return item.Province === "Washington"
-          }
-        );
+        // washington = america.filter(function(item) {
+        //     return item.Province === "Washington"
+        //   }
+        // );
 
         // second data loop, goes deeper and allows selecting of countries, total deaths etc
 
-        for (var i = 0; i < washington.length; i++) {
-          confirmed.push(washington[i].Confirmed)
-          deaths.push(washington[i].Deaths)
-          recovered.push(washington[i].Recovered)
-          date.push(this.moment(washington[i].Date).format('LLLL'))  
+        // for (var i = 0; i < washington.length; i++) {
+        //   confirmed.push(washington[i].Confirmed)
+        //   deaths.push(washington[i].Deaths)
+        //   recovered.push(washington[i].Recovered)
+        //   date.push(this.moment(washington[i].Date).format('LLLL'))  
 
-          coloR.push(dynamicColors());
-        }
+        //   coloR.push(dynamicColors());
+        // }
         
         // NOTE currently not being used but should be used if app grows
         // dispatch state/data to store for state manangenet
@@ -92,8 +110,8 @@ export default {
         
 
         // add state to local storage here
-        this.statesData = this.updateSummary
-        this.tester = this.filtered
+        // this.statesData = this.updateSummary
+        // this.tester = this.filtered
 
         // var chart = this.$refs.chart;
         // var ctx = chart.getContext("2d");
@@ -139,10 +157,16 @@ export default {
     );
   },
   computed: {
-    ...mapGetters({
-        updateSummary: "summaryFeed",
-        filtered: "filtered"
-    })
+    // ...mapGetters({
+    //     updateSummary: "summaryFeed",
+    //     filtered: "filtered"
+    // }),
+    updateSummary() {
+        return this.$store.getters.summaryFeed;
+    },
+    filteredSum() {
+        return this.$store.getters.filtered;
+    },
   }
 }
 </script>
@@ -166,7 +190,7 @@ export default {
   }
 
   &__states {
-    text-align: right;
+    // text-align: right;
     padding: 0px 10px 0px 10px;
     font-size: 14px;
   }
