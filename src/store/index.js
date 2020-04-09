@@ -14,7 +14,7 @@ export default new Vuex.Store({
       return state.summaryFeed[0]
     },
     filtered: state => {
-      return state.summaryFeed.filter(function(item) {
+      return state.summaryFeed[0].filter(function(item) {
         return item.Province === "Washington"
       }
     );

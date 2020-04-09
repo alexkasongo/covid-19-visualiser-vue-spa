@@ -21,7 +21,8 @@ export default {
         summary: null,
         componentKey: 0,
         washingtonSum: null,
-        statesData: null
+        statesData: null,
+        tester: null
     }
   },
   methods: {
@@ -92,6 +93,7 @@ export default {
 
         // add state to local storage here
         this.statesData = this.updateSummary
+        this.tester = this.filtered
 
         // var chart = this.$refs.chart;
         // var ctx = chart.getContext("2d");
@@ -139,6 +141,7 @@ export default {
   computed: {
     ...mapGetters({
         updateSummary: "summaryFeed",
+        filtered: "filtered"
     })
   }
 }

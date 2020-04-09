@@ -51,16 +51,10 @@ export default {
         data: chartData.data,
         options: chartData.options,
       });
-    },
-    doSomething () {
-      console.log(`Washington.vue - 55 - variable`, this.filtered);
     }
   },
   mounted () {
-    this.doSomething()
-
-    // add state to local storage here
-    this.statesData = this.updateSummary
+    
   },
   computed: {
     ...mapGetters({
