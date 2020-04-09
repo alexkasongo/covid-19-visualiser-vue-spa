@@ -14,20 +14,14 @@
         {{state.Recovered}}
       </div>
     </div> -->
-    {{filteredSum}}
     <div class="states" v-for="state in updateSummary" :key="state.componentKey">
-      <!-- <div>{{state.Province}} ({{state.Confirmed}} Cases)</div> -->
-      <div class="states__one">
-        {{state.Province}}
-      </div>
+      <div>{{state.Province}} ({{state.Confirmed}} Cases)</div>
     </div>
   </div>
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
 import Chart from 'chart.js';
-// import America from '@/components/data/America';
 
 export default {
   name: 'America',
@@ -165,7 +159,7 @@ export default {
         return this.$store.getters.summaryFeed;
     },
     filteredSum() {
-        return this.$store.getters.filtered;
+        return this.$store.getters.filtered
     },
   }
 }

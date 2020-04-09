@@ -14,11 +14,19 @@ export default new Vuex.Store({
       return state.summaryFeed[0]
     },
     filtered: state => {
-      return state.summaryFeed[0].filter(function(item) {
-        return item.Province === "Washington"
-      }
-    );
-  },
+        return state.summaryFeed.filter(function(item) {
+          console.log(`index.js - 18 - variable`, item);
+          // return item.Province === "Washington"
+        }
+      );
+    },
+    // filtered: state => {
+    //     return state.summaryFeed[0].filter(function(item) {
+    //       console.log(`index.js - 18 - item`, item);
+    //       return item.Province === "Washington"
+    //     }
+    //   );
+    // },
     globalFeed: state => {
       return state.globalFeed
     },

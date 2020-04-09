@@ -20,7 +20,7 @@
       </div> -->
       <div class="washington__chart">
         <h2>Chart</h2>
-        {{this.updateSummary}}
+        <!-- {{this.updateSummary}} -->
         <!-- {{this.filteredSummary}} -->
       </div>
     </div>

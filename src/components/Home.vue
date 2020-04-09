@@ -20,9 +20,9 @@
       </div>
     </div>
     <div class="home__united-states">
-      <!-- <Washington /> -->
+      <Washington />
       <!-- <SouthAfrica /> -->
-      <!-- <h2>Middle</h2> -->
+      <h2>Middle</h2>
       <America />
     </div>
     <div class="home__grid">
@@ -53,7 +53,7 @@ import America from '@/components/data/America'
 import SouthAfrica from '@/components/data/SouthAfrica'
 import Global from '@/components/data/Global'
 import News from '@/components/data/News'
-// import Washington from '@/components/data/Washington'
+import Washington from '@/components/data/Washington'
 
 export default {
   name: 'Home',
@@ -66,7 +66,7 @@ export default {
     SouthAfrica,
     Global,
     News,
-    // Washington
+    Washington
   },
   data() {
     return{
@@ -159,11 +159,11 @@ export default {
     color: #fff;
   }
 
-  // &__united-states {
-  //   display: grid;
-  //   grid-template-columns: 2fr 3fr 1fr;
-  //   grid-gap: 10px;
-  // }
+  &__united-states {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-gap: 10px;
+  }
 
 }
 </style>
