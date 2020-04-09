@@ -15,7 +15,7 @@
       </div>
     </div> -->
     <div class="states" v-for="state in updateSummary" :key="state.componentKey">
-      <div>{{state.Province}} ({{state.Confirmed}} Cases)</div>
+      <p class="america__states">{{state.Province}} ({{state.Confirmed}} Cases)</p>
     </div>
   </div>
 </template>
@@ -184,7 +184,7 @@ export default {
   }
 
   &__states {
-    // text-align: right;
+    text-align: right;
     padding: 0px 10px 0px 10px;
     font-size: 14px;
   }
