@@ -13,7 +13,6 @@
     </div>
     <div class="home__logo-grid">
       <div class="home__logo-container-one"></div>
-      <!-- <img class="home__logo-img" alt="logo" src="../assets/washington-logo.png"> -->
       <div class="home__title-container">
         <h2 class="home__title">Washington's COVID-19 Data and Surveillance Dashboard 
           <span>Florida Department of Health, Division of Disease Control and Health Protection</span>
