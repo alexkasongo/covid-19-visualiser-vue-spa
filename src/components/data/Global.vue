@@ -110,11 +110,13 @@ export default {
   &__title {
     max-width: 206px;
     margin: 0px 0px 0px 0px;
+    color: #2c3e50;
   }
 
   &__number {
     font-size: 60px;
     margin: 0px 0px 0px 0px;
+    color: #2c3e50;
   }
 
 }

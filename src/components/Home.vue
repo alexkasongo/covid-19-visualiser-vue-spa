@@ -1,13 +1,24 @@
 <template>
   <div class="home">
     <h1 class="home__logo">Keeping Up With The Covid</h1>
-    <h2 class="home__title">Global Summary</h2>
+    <div class="home__logo-grid">
+      <img class="home__logo-img" alt="logo" src="../assets/washington-logo.png">
+      <div class="home__title-container">
+        <h2 class="home__title">Global Summary
+        </h2>
+      </div>
+    </div>
     <div class="home__global">
       <Global />
     </div>
-    <h2 class="home__title">Washington's COVID-19 Data and Surveillance Dashboard <br>
-      <span>Florida Department of Health, Division of Disease Control and Health Protection</span>
-    </h2>
+    <div class="home__logo-grid">
+      <img class="home__logo-img" alt="logo" src="../assets/washington-logo.png">
+      <div class="home__title-container">
+        <h2 class="home__title">Washington's COVID-19 Data and Surveillance Dashboard 
+          <span>Florida Department of Health, Division of Disease Control and Health Protection</span>
+        </h2>
+      </div>
+    </div>
     <div class="home__united-states">
       <Washington />
       <!-- <SouthAfrica /> -->
@@ -89,13 +100,30 @@ export default {
   &__logo {
     color: #fff;
   }
+
+  &__logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    height: 100px;
+    background-color: #2D3143;
+    margin: 0px 0px 10px 0px;
+  }
+  &__logo-img {
+    height: 100px;
+  }
+
+  &__title-container {
+    display: flex;
+    align-items: center;
+  }
   
   &__title {
-    background-color: #2D3143;
     padding: 10px;
     border-radius: 4px;
-    margin: 0px 0px 10px 0px;
     color: #fff;
+    font-size: 22px;
+    margin: 0px;
+    text-align: left;
   }
 
   .home__southAfrica--title {
