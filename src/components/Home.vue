@@ -1,13 +1,13 @@
 <template>
   <div class="home">
     <h1 class="home__logo">Keeping Up With The Covid</h1>
-    <div class="home__logo-grid">
+    <!-- <div class="home__logo-grid">
       <div class="home__logo-container-two"></div>
       <div class="home__title-container">
         <h2 class="home__title">Global Summary
         </h2>
       </div>
-    </div>
+    </div> -->
     <div class="home__global">
       <Global />
     </div>
@@ -33,10 +33,10 @@
 </template>
 
 <script>
-import Summary from '@/components/data/Summary'
+// import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
 // import SouthAfrica from '@/components/data/SouthAfrica'
-import Global from '@/components/data/Global'
+// import Global from '@/components/data/Global'
 import News from '@/components/data/News'
 import Washington from '@/components/data/Washington'
 
@@ -46,10 +46,10 @@ export default {
     msg: String
   },
   components: {
-    Summary,
+    // Summary,
     America,
     // SouthAfrica,
-    Global,
+    // Global,
     News,
     Washington
   },
@@ -71,13 +71,13 @@ export default {
   &__global {
     display: flex;
     justify-content: center;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 5px 0px;
   }
 
   // &__grid {
   //   display: grid;
   //   grid-template-columns: 1fr 1fr;
-  //   grid-gap: 10px;
+  //   grid-gap: 5px;
   //   max-width: 1200px;
   //   margin: 0px auto;
   // }
@@ -91,7 +91,7 @@ export default {
     grid-template-columns: 100px 1fr;
     height: 68px;
     background-color: #2D3143;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 5px 0px;
   }
 
   &__logo-container-one {
@@ -113,7 +113,7 @@ export default {
   }
   
   &__title {
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
     color: #fff;
     font-size: 16px;
@@ -123,32 +123,32 @@ export default {
 
   .home__southAfrica--title {
     background-color: #2D3143;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
-    margin: 10px 0px 10px 0px;
+    margin: 5px 0px 5px 0px;
     color: #fff;
   }
   
   .home__america--title {
     background-color: #2D3143;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
-    margin: 10px 0px 10px 0px;
+    margin: 5px 0px 5px 0px;
     color: #fff;
   }
   .home__america--all {
     background-color: #2D3143;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 5px 0px;
     color: #fff;
   }
 
   &__united-states {
     display: grid;
     grid-template-columns: 2fr 3fr 1fr;
-    grid-gap: 10px;
-    margin: 0px 0px 10px 0px;
+    grid-gap: 5px;
+    margin: 0px 0px 5px 0px;
   }
 
 }

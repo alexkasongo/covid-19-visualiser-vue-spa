@@ -79,7 +79,7 @@ export default {
   &__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-gap: 5px;
   }
 
   &__totalConfirmed {

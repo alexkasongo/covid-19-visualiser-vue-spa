@@ -19,9 +19,7 @@
         </div>
       </div> -->
       <div class="washington__chart">
-        <h2>Chart</h2>
-        <!-- {{this.updateSummary}} -->
-        <!-- {{this.filteredSummary}} -->
+        <h2>Stats</h2>
       </div>
     </div>
   </div>

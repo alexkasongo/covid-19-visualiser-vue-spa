@@ -92,7 +92,7 @@ export default {
   &__card {
     max-width: 600px;
     text-align: center;
-    margin: 0px auto 10px auto;
+    margin: 0px auto 5px auto;
     background-color: #2D3143;
     border-radius: 4px;
   }
@@ -102,13 +102,13 @@ export default {
   }
 
   &__subTitle {
-    margin: 0px 0px 10px 0px;
-    padding: 20px 10px;
+    margin: 0px 0px 5px 0px;
+    padding: 20px 5px;
   }
 
   &__description {
     text-align: justify;
-    padding: 0px 10px;
+    padding: 0px 5px;
   }
 
   &__link {
@@ -129,6 +129,7 @@ export default {
   &__date {
     text-align: right;
     padding: 20px;
+    margin: 0px;
   }
 }
 

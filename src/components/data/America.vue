@@ -185,7 +185,7 @@ export default {
 
   &__states {
     text-align: right;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 5px 0px 5px;
     font-size: 14px;
   }
 }
