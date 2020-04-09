@@ -22,7 +22,7 @@
     <div class="home__united-states">
       <Washington />
       <!-- <SouthAfrica /> -->
-      <h2>Middle</h2>
+      <News />
       <America />
     </div>
     <div class="home__grid">
