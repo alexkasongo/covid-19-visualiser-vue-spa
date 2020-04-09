@@ -2,7 +2,7 @@
   <div class="home">
     <h1 class="home__logo">Keeping Up With The Covid</h1>
     <div class="home__logo-grid">
-      <img class="home__logo-img" alt="logo" src="../assets/washington-logo.png">
+      <div class="home__logo-container-two"></div>
       <div class="home__title-container">
         <h2 class="home__title">Global Summary
         </h2>
@@ -12,7 +12,8 @@
       <Global />
     </div>
     <div class="home__logo-grid">
-      <img class="home__logo-img" alt="logo" src="../assets/washington-logo.png">
+      <div class="home__logo-container-one"></div>
+      <!-- <img class="home__logo-img" alt="logo" src="../assets/washington-logo.png"> -->
       <div class="home__title-container">
         <h2 class="home__title">Washington's COVID-19 Data and Surveillance Dashboard 
           <span>Florida Department of Health, Division of Disease Control and Health Protection</span>
@@ -103,13 +104,23 @@ export default {
 
   &__logo-grid {
     display: grid;
-    grid-template-columns: 1fr 7fr;
-    height: 100px;
+    grid-template-columns: 100px 1fr;
+    height: 60px;
     background-color: #2D3143;
     margin: 0px 0px 10px 0px;
   }
-  &__logo-img {
-    height: 100px;
+
+  &__logo-container-one {
+    background-image: url('../assets/washington-logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__logo-container-two {
+    background-image: url('../assets/global.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &__title-container {
@@ -121,7 +132,7 @@ export default {
     padding: 10px;
     border-radius: 4px;
     color: #fff;
-    font-size: 22px;
+    font-size: 16px;
     margin: 0px;
     text-align: left;
   }
