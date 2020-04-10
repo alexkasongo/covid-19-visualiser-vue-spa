@@ -2,16 +2,18 @@
   <div class="news">
     <div class="news__grid" v-for="article in this.allArticles" :key="article.id">
       <div class="news__card">
-        <a class="news__subTitle-link" :href="article.url">
-          <h2 class="news__subTitle">{{article.title}}</h2>
-        </a>
-        <div class="image-box">
-          <a :href="article.url">
-            <img :src="article.urlToImage" :alt="article.urlToImage" />
+        <div class="news__card--container">
+          <a class="news__subTitle-link" :href="article.url">
+            <h2 class="news__subTitle">{{article.title}}</h2>
           </a>
+          <div class="image-box">
+            <a :href="article.url">
+              <img :src="article.urlToImage" :alt="article.urlToImage" />
+            </a>
+          </div>
+          <p class="news__description">{{article.description}}<a class="news__link" :href="article.url">more</a></p>
+          <p class="news__date">{{ moment(article.publishedAt).startOf('day').fromNow() }}</p>
         </div>
-        <p class="news__description">{{article.description}}<a class="news__link" :href="article.url">more</a></p>
-        <p class="news__date">{{ moment(article.publishedAt).startOf('day').fromNow() }}</p>
       </div>
     </div>
   </div>
@@ -84,6 +86,8 @@ export default {
 .news{
   height: 500px;
   overflow: auto;
+  background-color: #2D3143;
+  border-radius: 4px;
 
   &__grid {
     color: #fff;
@@ -93,8 +97,13 @@ export default {
     max-width: 600px;
     text-align: center;
     margin: 0px auto 5px auto;
-    background-color: #2D3143;
-    border-radius: 4px;
+    // background-color: #2D3143;
+
+    &--container {
+      background-color: #1C1F2B;
+      margin: 5px 5px;
+      border-radius: 4px;
+    }
   }
 
   &__image {
@@ -137,7 +146,7 @@ export default {
     position: relative;
     margin: auto;
     overflow: hidden;
-    width: 580px;
+    // width: 580px;
 }
 .image-box img {
     max-width: 100%;
