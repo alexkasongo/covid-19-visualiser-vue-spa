@@ -2,8 +2,9 @@
 
   <div>
     <div>
-      <span v-if="loading">Loading...</span>
-      <label for="checkbox">GeoJSON Visibility</label>
+      <!-- <span v-if="loading">Loading...</span> -->
+      <!-- <span v-if="loading">Loading...</span> -->
+      <!-- <label for="checkbox">GeoJSON Visibility</label>
       <input
         id="checkbox"
         v-model="show"
@@ -19,12 +20,12 @@
         v-model="fillColor"
         type="color"
       >
-      <br>
+      <br> -->
     </div>
     <l-map
       :zoom="zoom"
       :center="center"
-      style="height: 500px; width: 100%"
+      style="width: 100%"
     >
       <l-tile-layer
         :url="url"
@@ -66,14 +67,13 @@ export default {
       loading: false,
       show: true,
       enableTooltip: true,
-      zoom: 5,
-      center: [42, -105],
+      zoom: 4,
+      center: [38, -100],
       geojson: null,
       fillColor: "#A52A2A",
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-    //   marker: latLng(47.41322, -1.219482)
       marker: latLng(47.8279, -122.3054)
     };
   },
@@ -88,7 +88,7 @@ export default {
       return () => {
         return {
           weight: 2,
-          color: "#ECEFF1",
+          color: "#1C1F2B",
           opacity: 1,
           fillColor: fillColor,
           fillOpacity: 1
@@ -100,14 +100,34 @@ export default {
         return () => {};
       }
       return (feature, layer) => {
+          console.log(`Map.vue - 103 - variable`, layer);
         layer.bindTooltip(
-          "<div>code:" +
-            feature.properties.code +
-            "</div><div>nom: " +
+          "<div>" +
+            feature.properties.name +
+            "</div><div>Cases: " +
             feature.properties.nom +
             "</div>",
           { permanent: false, sticky: true }
         );
+        // layer.setStyle({
+        //     weight: 2,
+        //     color: '#666',
+        //     fillColor: 'white'
+        // });
+        layer.on("mouseover",function(){
+            layer.setStyle({
+                weight: 2,
+                color: '#1C1F2B',
+                fillColor: '#1C1F2B'
+            });
+        });
+        layer.on("mouseout",function(){
+            layer.setStyle({
+                weight: 2,
+                color: '#1C1F2B',
+                fillColor: '#A52A2A'
+            });
+        });
       };
     }
   },

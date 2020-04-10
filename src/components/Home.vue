@@ -14,7 +14,8 @@
     </div>
     <div class="home__united-states">
       <Washington />
-      <News />
+      <!-- <News /> -->
+      <Map />
       <America />
     </div>
     <div class="home__grid">
@@ -22,7 +23,6 @@
         <Summary />
       </div>
     </div>
-    <Map />
   </div>
 </template>
 
@@ -30,7 +30,7 @@
 // import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
 // import Global from '@/components/data/Global'
-import News from '@/components/data/News'
+// import News from '@/components/data/News'
 import Washington from '@/components/data/Washington'
 import Map from '@/components/data/Map'
 
@@ -43,7 +43,7 @@ export default {
     // Summary,
     America,
     // Global,
-    News,
+    // News,
     Washington,
     Map
   },
