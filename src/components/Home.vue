@@ -17,10 +17,10 @@
       <America />
     </div>
 
-    <div class="home__logo-grid">
-      <div class="home__logo-container-one"></div>
+    <div class="home__logo-grid-two">
+      <div class="home__logo-container-two"></div>
       <div class="home__title-container">
-        <h2 class="home__title">World</h2>
+        <h2 class="home__title-two">World</h2>
       </div>
     </div>
     <div class="home__global">
@@ -90,6 +90,12 @@ export default {
     background-color: #2D3143;
     margin: 0px 0px 5px 0px;
   }
+  &__logo-grid-two {
+    height: 100px;
+    background-color: #2D3143;
+    margin: 0px 0px 5px 0px;
+    position: relative;
+  }
 
   &__logo-container-one {
     background-image: url('../assets/washington-logo.png');
@@ -102,6 +108,8 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 100%;
+    opacity: 0.1;
   }
 
   &__title-container {
@@ -116,6 +124,19 @@ export default {
     font-size: 16px;
     margin: 0px;
     text-align: left;
+  }
+  &__title-two {
+    padding: 5px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 36px;
+    margin: 0px;
+    text-align: left;
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+
+    transform: translate(-50%, -50%);
   }
 
   .home__southAfrica--title {
@@ -145,7 +166,7 @@ export default {
     display: grid;
     grid-template-columns: 2fr 3fr 1fr;
     grid-gap: 5px;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 50px 0px;
   }
 
 }
