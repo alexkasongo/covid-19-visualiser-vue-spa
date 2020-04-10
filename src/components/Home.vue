@@ -27,7 +27,7 @@
 </template>
 
 <script>
-// import Summary from '@/components/data/Summary'
+import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
 // import Global from '@/components/data/Global'
 // import News from '@/components/data/News'
@@ -40,7 +40,7 @@ export default {
     msg: String
   },
   components: {
-    // Summary,
+    Summary,
     America,
     // Global,
     // News,

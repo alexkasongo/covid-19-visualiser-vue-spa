@@ -68,7 +68,7 @@ export default {
       show: true,
       enableTooltip: true,
       zoom: 4,
-      center: [38, -100],
+      center: [48, -122.3054],
       geojson: null,
       fillColor: "#A52A2A",
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
