@@ -1,24 +1,25 @@
 <template>
   <div class="washington">
-    <div class="washington__left">
-      <div class="washington__washington">
-        <div class="washington__confirmed" v-for="event in filteredSum.slice(0, 1)" :key="event.id">
-          <div class="washington__washington-total">
-            <h2>Total Cases</h2>
-            <p>{{ event.Confirmed }}</p>
+    <div class="washington__stats">
+      <div class="washington__confirmed" v-for="event in filteredSum.slice(0, 1)" :key="event.id">
+        <div class="washington__washington-total">
+          <h2>Total Cases</h2>
+          <p>{{ event.Confirmed }}</p>
+        </div>
+        <div class="washington__washington-sum">
+          <div class="washington__washington-recovered">
+            <h2>Recovered</h2>
+            <p>{{ event.Recovered }}</p> 
           </div>
-          <div class="washington__washington-sum">
-            <div class="washington__washington-recovered">
-              <h2>Recovered</h2>
-              <p>{{ event.Recovered }}</p> 
-            </div>
-            <div class="washington__washington-active">
-              <h2>Deaths</h2>
-              <p>{{ event.Deaths }}</p> 
-            </div>
+          <div class="washington__washington-active">
+            <h2>Deaths</h2>
+            <p>{{ event.Deaths }}</p> 
           </div>
         </div>
       </div>
+    </div>
+    <div class="washington__chart">
+      <WashingtonChart />
     </div>
   </div>
 </template>
@@ -26,11 +27,15 @@
 <script>
 import { mapGetters } from "vuex";
 import Chart from 'chart.js';
+import WashingtonChart from '@/components/data/WashingtonChart'
 
 export default {
   name: 'Washington',
   props: {
     msg: String
+  },
+  components: {
+    WashingtonChart
   },
   data() {
     return{

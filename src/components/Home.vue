@@ -1,13 +1,6 @@
 <template>
   <div class="home">
-    <h1 class="home__logo">Keeping Up With The Covid</h1>
-    <!-- <div class="home__logo-grid">
-      <div class="home__logo-container-two"></div>
-      <div class="home__title-container">
-        <h2 class="home__title">Global Summary
-        </h2>
-      </div>
-    </div> -->
+    <!-- <h1 class="home__logo">Keeping Up With The Covid</h1> -->
     <div class="home__global">
       <!-- <Global /> -->
     </div>
@@ -35,7 +28,6 @@
 <script>
 // import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
-// import SouthAfrica from '@/components/data/SouthAfrica'
 // import Global from '@/components/data/Global'
 import News from '@/components/data/News'
 import Washington from '@/components/data/Washington'
@@ -48,7 +40,6 @@ export default {
   components: {
     // Summary,
     America,
-    // SouthAfrica,
     // Global,
     News,
     Washington

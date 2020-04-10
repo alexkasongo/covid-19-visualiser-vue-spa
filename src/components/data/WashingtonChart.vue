@@ -1,5 +1,5 @@
 <template>
-  <div class="southAfrica">
+  <div class="washingtonChart">
     <canvas ref="chart"></canvas>
   </div>
 </template>
@@ -9,7 +9,7 @@ import { mapGetters } from "vuex";
 import Chart from 'chart.js';
 
 export default {
-  name: 'SouthAfrica',
+  name: 'WashingtonChart',
   props: {
     msg: String
   },
@@ -38,7 +38,6 @@ export default {
       .get('https://api.covid19api.com/live/country/south-africa/status/confirmed')
       .then(response => {
         let america = [];
-        // let americaFeed = []
         let coloR = [];
 
         // generate dynamic colors
@@ -53,6 +52,7 @@ export default {
         const deaths = []
         const recovered = []
         const date = []
+        const days = []
 
         // initial data loop
         for (let data of response.data) {
@@ -65,11 +65,13 @@ export default {
           deaths.push(america[i].Deaths)
           recovered.push(america[i].Recovered)
           // format date
-          date.push(this.moment(america[i].Date).format('LLLL'))
-
+          date.push(this.moment(america[i].Date).format('D/M'))
+          // get number of days
+          days.push(america[i].Confirmed.length)
+          // generate random colors
           coloR.push(dynamicColors());
         }
-        
+
         // NOTE currently not being used but should be used if app grows
         // dispatch state/data to store for state manangenet
         // this.$store.dispatch("updateSummary", americaFeed);
@@ -79,29 +81,29 @@ export default {
         Chart.defaults.global.defaultFontColor = '#eee';
         // eslint-disable-next-line no-unused-vars
         var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
+            type: 'bar',
             data: {
                 labels: date,
                 datasets: [{
-                  label: 'Confirmed Cases',
+                  label: 'New Cases by Day: Last 30 Days',
                   data: confirmed,
                   backgroundColor: '#4BC0C0',
                   // borderWidth: 2,
                   minBarLength: 2,
                 },
                 // another line graph
-                { 
-                  label: 'Confirmed Deaths',
-                  data: deaths,
-                  backgroundColor: '#FF6384',
-                  borderWidth: 2
-                },
-                { 
-                  label: 'Confirmed Recoveries',
-                  data: recovered,
-                  backgroundColor: '#eee',
-                  borderWidth: 2
-                }
+                // { 
+                //   label: 'Confirmed Deaths',
+                //   data: deaths,
+                //   backgroundColor: '#FF6384',
+                //   borderWidth: 2
+                // },
+                // { 
+                //   label: 'Confirmed Recoveries',
+                //   data: recovered,
+                //   backgroundColor: '#eee',
+                //   borderWidth: 2
+                // }
                 ]
             },
             options: {
@@ -131,7 +133,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.southAfrica {
+.washingtonChart {
   
   background-color: #2D3143;
   border-radius: 4px;
