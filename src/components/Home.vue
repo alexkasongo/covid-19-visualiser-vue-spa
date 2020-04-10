@@ -1,9 +1,7 @@
 <template>
   <div class="home">
     <!-- <h1 class="home__logo">Keeping Up With The Covid</h1> -->
-    <div class="home__global">
-      <!-- <Global /> -->
-    </div>
+    
     <div class="home__logo-grid">
       <div class="home__logo-container-one"></div>
       <div class="home__title-container">
@@ -18,21 +16,33 @@
       <Map />
       <America />
     </div>
+
+    <div class="home__logo-grid">
+      <div class="home__logo-container-one"></div>
+      <div class="home__title-container">
+        <h2 class="home__title">World</h2>
+      </div>
+    </div>
+    <div class="home__global">
+      <Global />
+    </div>
     <div class="home__grid">
       <div class="home__summary">
-        <Summary />
+        <!-- <Summary /> -->
+        <SummaryTable />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Summary from '@/components/data/Summary'
+// import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
-// import Global from '@/components/data/Global'
+import Global from '@/components/data/Global'
 // import News from '@/components/data/News'
 import Washington from '@/components/data/Washington'
 import Map from '@/components/data/Map'
+import SummaryTable from '@/components/data/SummaryTable'
 
 export default {
   name: 'Home',
@@ -40,12 +50,13 @@ export default {
     msg: String
   },
   components: {
-    Summary,
+    // Summary,
     America,
-    // Global,
+    Global,
     // News,
     Washington,
-    Map
+    Map,
+    SummaryTable
   },
   data() {
     return{

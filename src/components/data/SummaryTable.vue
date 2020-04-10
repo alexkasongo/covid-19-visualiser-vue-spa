@@ -1,35 +1,72 @@
 <template>
-  <div class="summary">
-    <canvas ref="chart"></canvas>
+  <div class="table">
+    <vuetable
+    api-url="https://api.covid19api.com/summary"
+    :fields="fields"
+    data-path="Countries"
+    pagination-path=""
+  ></vuetable>
+    <!-- <vuetable
+    api-url="https://vuetable.ratiw.net/api/users"
+    :fields="fields"
+    data-path="data"
+    pagination-path=""
+  ></vuetable> -->
   </div>
 </template>
 
 <script>
-import Chart from 'chart.js';
-import summaryChart from '@/chart-data.js';
+import Vuetable from 'vuetable-2'
 
 export default {
   name: 'Summary',
-  props: {
-    msg: String
+  components: {
+    Vuetable
   },
   data() {
     return{
-        summary: null,
-        summaryChart: summaryChart,
+        fields: [
+        {
+          name: "Country",
+          title: 'Country',
+          width: "20%"
+        },
+        {
+          name: "TotalConfirmed",
+          title: '<i class="grey mail outline icon"></i>Confirmed',
+          width: "20%"
+        },
+        {
+          name: "NewConfirmed",
+          title: '<i class="grey sitemap icon"></i>New',
+          width: "15%"
+        },
+        {
+          name: "TotalDeaths",
+          title: '<i class="grey birthday icon"></i>Deaths',
+          width: "15%",
+          // formatter: (value) => { 
+          //   return (value === null)
+          //     ? ''
+          //     : this.moment(value, 'YYYY-MM-DD').format('MMM Do, YYYY')
+          // }
+        },
+        {
+          name: "TotalRecovered",
+          title: '<i class="grey heterosexual icon"></i>Recovered',
+          titleClass: "center aligned",
+          dataClass: "center aligned",
+          width: "15%",
+          // formatter: (value) => {
+          //   return value.toUpperCase() === 'M' 
+          //     ? '<span class="ui teal label"><i class="large man icon"></i>Male</span>' 
+          //     : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
+          // }
+        }
+      ]
     }
   },
-  methods: {
-    createChart(chartId, chartData) {
-      const ctx = document.getElementById(chartId);
-      // eslint-disable-next-line no-unused-vars
-      const myChart = new Chart(ctx, {
-        type: chartData.type,
-        data: chartData.data,
-        options: chartData.options,
-      });
-    }
-  },
+  methods: {},
   mounted () {
     this.$http
       .get('https://api.covid19api.com/summary')
@@ -66,52 +103,6 @@ export default {
         // NOTE currently not being used but should be used if app grows
         // dispatch state/data to store for state manangenet
         this.$store.dispatch("updateSummary", summaryDataFeed);
-
-        var chart = this.$refs.chart;
-        var ctx = chart.getContext("2d");
-        Chart.defaults.global.defaultFontColor = '#eee';
-        // eslint-disable-next-line no-unused-vars
-        var myChart = new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
-                labels: countries,
-                datasets: [{
-                  label: 'Number of Confirmed Cases',
-                  data: totalConfirmed,
-                  backgroundColor: coloR,
-                  minBarLength: 2,
-                },
-                // another line graph
-                { 
-                  label: 'Number of Confirmed Deaths',
-                  data: totalDeaths,
-                  backgroundColor: '#222',
-                  borderColor: [
-                    '#000',
-                  ],
-                  borderWidth: 2
-                }
-              ]
-            },
-            options: {
-              maintainAspectRatio: false,
-                scales: {
-                  yAxes: [{
-                    ticks: {
-                        beginAtZero: true,
-                        padding: 10,
-                        autoSkip: false,
-                    }
-                  }],
-                  xAxes: [{
-                      gridLines: {
-                        offsetGridLines: true
-                      }
-                  }]
-                }
-            }
-        });
-
       }
     );
   }
@@ -122,11 +113,9 @@ export default {
 <style scoped lang="scss">
 .summary {
 
-  height: 1000vh;
+  // height: 1000vh;
   background-color: #2D3143;
   border-radius: 4px;
-// height: 600px;
-// overflow: auto;
 
   &__type {
     margin: 0px;
