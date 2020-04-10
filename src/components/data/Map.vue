@@ -54,7 +54,7 @@ Icon.Default.mergeOptions({
 });
 
 export default {
-  name: "Example",
+  name: "Map",
   components: {
     LMap,
     LTileLayer,
@@ -66,14 +66,15 @@ export default {
       loading: false,
       show: true,
       enableTooltip: true,
-      zoom: 6,
-      center: [48, -1.219482],
+      zoom: 5,
+      center: [42, -105],
       geojson: null,
       fillColor: "#A52A2A",
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      marker: latLng(47.41322, -1.219482)
+    //   marker: latLng(47.41322, -1.219482)
+      marker: latLng(47.8279, -122.3054)
     };
   },
   computed: {
@@ -112,7 +113,8 @@ export default {
   },
   async created() {
     this.loading = true;
-    const response = await fetch("https://rawgit.com/gregoiredavid/france-geojson/master/regions/pays-de-la-loire/communes-pays-de-la-loire.geojson")
+    const response = await fetch("https://raw.githubusercontent.com/shawnbot/topogram/master/data/us-states.geojson")
+    // const response = await fetch("https://rawgit.com/gregoiredavid/france-geojson/master/regions/pays-de-la-loire/communes-pays-de-la-loire.geojson")
     const data = await response.json();
     this.geojson = data;
     this.loading = false;
