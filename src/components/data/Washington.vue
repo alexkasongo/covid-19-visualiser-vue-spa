@@ -129,9 +129,9 @@ export default {
       font-size: 50px;
     }
   }
-  &__washington-total:hover {
-  background-color: brown;
-  }
+  // &__washington-total:hover {
+  // background-color: brown;
+  // }
 
   &__washington-recovered {
     background-color: #1C1F2B;
@@ -151,9 +151,9 @@ export default {
     }
   }
 
-  &__washington-recovered:hover {
-  background-color: brown;
-  }
+  // &__washington-recovered:hover {
+  // background-color: brown;
+  // }
 
   &__washington-active {
     background-color: #1C1F2B;
@@ -173,9 +173,9 @@ export default {
     }
   }
 
-  &__washington-active:hover {
-  background-color: brown;
-  }
+  // &__washington-active:hover {
+  // background-color: brown;
+  // }
 
 }
 </style>

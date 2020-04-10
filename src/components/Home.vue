@@ -22,6 +22,7 @@
         <Summary />
       </div>
     </div>
+    <Map />
   </div>
 </template>
 
@@ -31,6 +32,7 @@ import America from '@/components/data/America'
 // import Global from '@/components/data/Global'
 import News from '@/components/data/News'
 import Washington from '@/components/data/Washington'
+import Map from '@/components/data/Map'
 
 export default {
   name: 'Home',
@@ -42,7 +44,8 @@ export default {
     America,
     // Global,
     News,
-    Washington
+    Washington,
+    Map
   },
   data() {
     return{
@@ -64,14 +67,6 @@ export default {
     justify-content: center;
     margin: 0px 0px 5px 0px;
   }
-
-  // &__grid {
-  //   display: grid;
-  //   grid-template-columns: 1fr 1fr;
-  //   grid-gap: 5px;
-  //   max-width: 1200px;
-  //   margin: 0px auto;
-  // }
 
   &__logo {
     color: #fff;
