@@ -56,7 +56,6 @@ export default {
 
         // initial data loop
         for (let data of response.data) {
-          console.log(`WashingtonChart.vue - 59 - variable`, data);
           america.push(data);
         }
 
