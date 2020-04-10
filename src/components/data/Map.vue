@@ -145,7 +145,6 @@ export default {
   async created() {
     this.loading = true;
     const response = await fetch("https://raw.githubusercontent.com/shawnbot/topogram/master/data/us-states.geojson")
-    // const response = await fetch("https://rawgit.com/gregoiredavid/france-geojson/master/regions/pays-de-la-loire/communes-pays-de-la-loire.geojson")
     const data = await response.json();
     this.geojson = data;
     this.loading = false;
