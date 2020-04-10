@@ -2,7 +2,7 @@
   <div class="washington">
     <div class="washington__stats">
       <!-- <div class="washington__confirmed" v-for="event in filteredSum" :key="event.id"> -->
-      <div class="washington__confirmed" v-for="event in filteredSum.slice(0, 1)" :key="event.id">
+      <div class="washington__confirmed" v-for="event in filteredSum" :key="event.id">
         <div class="washington__washington-total">
           <h2>Total Cases</h2>
           <p>{{ event.Confirmed }}</p>

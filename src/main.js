@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 
+import VueEvents from 'vue-events'
+Vue.use(VueEvents)
+
 /**
  * moment and axios
  */

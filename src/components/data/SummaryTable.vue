@@ -1,18 +1,20 @@
 <template>
   <div class="table">
-    <vuetable
-    api-url="https://api.covid19api.com/summary"
-    :fields="fields"
-    data-path="Countries"
-    pagination-path=""
-  ></vuetable>
-    <!-- <vuetable
-    api-url="https://vuetable.ratiw.net/api/users"
-    :fields="fields"
-    data-path="data"
-    pagination-path=""
-  ></vuetable> -->
-  </div>
+    <div class="table__chart">
+      <vuetable
+      api-url="https://api.covid19api.com/summary"
+      :fields="fields"
+      data-path="Countries"
+      pagination-path=""
+    ></vuetable>
+      <!-- <vuetable
+      api-url="https://vuetable.ratiw.net/api/users"
+      :fields="fields"
+      data-path="data"
+      pagination-path=""
+    ></vuetable> -->
+    </div>
+    </div>
 </template>
 
 <script>
@@ -21,11 +23,17 @@ import Vuetable from 'vuetable-2'
 export default {
   name: 'Summary',
   components: {
-    Vuetable
+    Vuetable,
   },
   data() {
     return{
-        fields: [
+      filterText: '',
+      // options: [
+      //   texts: {
+      //     filterPlaceholder: 'filter...'
+      //   }
+      // ],
+      fields: [
         {
           name: "Country",
           title: 'Country',
@@ -33,17 +41,20 @@ export default {
         },
         {
           name: "TotalConfirmed",
-          title: '<i class="grey mail outline icon"></i>Confirmed',
+          title: 'Confirmed',
+          // title: '<i class="grey mail outline icon"></i>Confirmed',
           width: "20%"
         },
         {
           name: "NewConfirmed",
-          title: '<i class="grey sitemap icon"></i>New',
+          title: 'New',
+          // title: '<i class="grey sitemap icon"></i>New',
           width: "15%"
         },
         {
           name: "TotalDeaths",
-          title: '<i class="grey birthday icon"></i>Deaths',
+          title: 'Deaths',
+          // title: '<i class="grey birthday icon"></i>Deaths',
           width: "15%",
           // formatter: (value) => { 
           //   return (value === null)
@@ -53,7 +64,8 @@ export default {
         },
         {
           name: "TotalRecovered",
-          title: '<i class="grey heterosexual icon"></i>Recovered',
+          title: 'Recovered',
+          // title: '<i class="grey heterosexual icon"></i>Recovered',
           titleClass: "center aligned",
           dataClass: "center aligned",
           width: "15%",
@@ -68,6 +80,7 @@ export default {
   },
   methods: {},
   mounted () {
+
     this.$http
       .get('https://api.covid19api.com/summary')
       .then(response => {
