@@ -158,7 +158,11 @@ export default {
     },
     filteredSum() {
         return this.$store.getters.filtered
-    }
+    },
+    // sortedArray(){
+    //   let data = this.updateSummary
+    //   return data.sort((a, b) => a.name - b.name );
+    // }
   }
 }
 </script>

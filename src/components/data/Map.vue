@@ -74,7 +74,8 @@ export default {
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      marker: latLng(47.8279, -122.3054)
+      marker: latLng(47.8279, -122.3054),
+      covid: []
     };
   },
   computed: {
@@ -99,20 +100,30 @@ export default {
       };
     },
     onEachFeatureFunction() {
+        const data = this.covidData
+        
       if (!this.enableTooltip) {
         return () => {};
       }
       return (feature, layer) => {
-        console.log(`Map.vue - 106 - variable`, this.covidData);
+          if (data) {
+              const filter = data.filter((state) => {
+                  return state.Province === feature.properties.name
+              })
+          
+
         layer.bindTooltip(
           "<div>" +
             feature.properties.name +
             "</div><div>Cases: " +
-            feature.properties.nom +
+            filter[0].Confirmed +
+            "</div><div>Deaths: " +
+            filter[0].Deaths +
             "</div>",
           { permanent: false, sticky: true }
         );
         layer.on("mouseover",function(){
+            // console.log(`Map.vue - 120 - variable`, filter);
             layer.setStyle({
                 weight: 2,
                 color: '#1C1F2B',
@@ -126,7 +137,9 @@ export default {
                 fillColor: '#A52A2A'
             });
         });
-      };
+      }
+
+      }
     }
   },
   async created() {

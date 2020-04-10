@@ -12,7 +12,7 @@ export default new Vuex.Store({
   getters: {
     summaryFeed: state => {
       if (state.summaryFeed[0]) {
-        return state.summaryFeed[0]
+        return state.summaryFeed[0].sort((a, b) => (a.Province < b.Province) ? -1 : 1)
       }
     },
     filtered: state => {
