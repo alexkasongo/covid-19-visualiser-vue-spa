@@ -151,16 +151,12 @@ export default {
     );
   },
   computed: {
-    // ...mapGetters({
-    //     updateSummary: "summaryFeed",
-    //     filtered: "filtered"
-    // }),
     updateSummary() {
         return this.$store.getters.summaryFeed;
     },
     filteredSum() {
         return this.$store.getters.filtered
-    },
+    }
   }
 }
 </script>
@@ -185,8 +181,20 @@ export default {
 
   &__states {
     text-align: right;
-    padding: 0px 5px 0px 5px;
-    font-size: 14px;
+    margin: 0px;
   }
+}
+
+.states {
+  margin: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+.states:hover {
+  background-color: brown;
 }
 </style>

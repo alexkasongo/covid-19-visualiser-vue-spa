@@ -103,7 +103,7 @@ export default {
 
   &__subTitle {
     margin: 0px 0px 5px 0px;
-    padding: 20px 5px;
+    padding: 10px 5px;
   }
 
   &__description {

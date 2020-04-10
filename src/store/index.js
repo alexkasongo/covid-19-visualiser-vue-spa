@@ -14,11 +14,11 @@ export default new Vuex.Store({
       return state.summaryFeed[0]
     },
     filtered: state => {
-        return state.summaryFeed.filter(function(item) {
-          console.log(`index.js - 18 - variable`, item);
-          // return item.Province === "Washington"
-        }
-      );
+      if (state.summaryFeed[0]) {
+        return state.summaryFeed[0].filter((state) => {
+          return state.Province === "Washington"
+        })
+      }
     },
     // filtered: state => {
     //     return state.summaryFeed[0].filter(function(item) {

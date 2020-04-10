@@ -9,7 +9,7 @@
       </div>
     </div> -->
     <div class="home__global">
-      <Global />
+      <!-- <Global /> -->
     </div>
     <div class="home__logo-grid">
       <div class="home__logo-container-one"></div>
