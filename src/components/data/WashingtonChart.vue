@@ -88,17 +88,17 @@ export default {
                 datasets: [{
                   label: `New Cases by Day: Last ${confirmed.length } Days`,
                   data: confirmed,
-                  backgroundColor: '#008556',
+                  backgroundColor: '#4BC0C0',
                   // borderWidth: 2,
                   minBarLength: 2,
                 },
                 // another line graph
-                { 
-                  label: 'Confirmed Deaths',
-                  data: deaths,
-                  backgroundColor: '#FF6384',
-                  borderWidth: 2
-                },
+                // { 
+                //   label: 'Confirmed Deaths',
+                //   data: deaths,
+                //   backgroundColor: '#FF6384',
+                //   borderWidth: 2
+                // },
                 // { 
                 //   label: 'Confirmed Recoveries',
                 //   data: recovered,
