@@ -125,7 +125,7 @@ export default {
   height: 1000vh;
   background-color: #2D3143;
   border-radius: 4px;
-  // height: 500px;
+  // height: 600px;
   // overflow: auto;
 
   &__type {

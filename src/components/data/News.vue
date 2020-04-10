@@ -84,7 +84,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .news{
-  height: 500px;
+  height: 600px;
   overflow: auto;
   background-color: #2D3143;
   border-radius: 4px;
