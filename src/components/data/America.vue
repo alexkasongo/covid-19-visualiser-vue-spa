@@ -195,7 +195,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
   padding: 2px 5px;
   background-color: #1C1F2B;
 }

@@ -77,10 +77,13 @@ export default {
   border-radius: 4px;
   height: 600px;
   overflow: auto;
+  cursor: default;
 
   &__stats {
-    height: 295px;
-    // background: forestgreen;
+    // height: 295px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__chart {
@@ -97,15 +100,24 @@ export default {
     margin: 0px;
   }
 
+  &__confirmed {
+    width: 100%;
+  }
+
   &__washington-sum {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 145px;
   }
   
   &__washington-total {
     background-color: #1C1F2B;
     margin: 5px;
     border-radius: 4px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     h2 {
       margin: 0px;
       font-size: 30px;
@@ -122,6 +134,9 @@ export default {
     background-color: #1C1F2B;
     margin: 0px 2.5px 5px 5px;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     h2 {
       margin: 0px;
       font-size: 30px;
@@ -137,6 +152,9 @@ export default {
     background-color: #1C1F2B;
     margin: 0px 5px 5px 2.5px ;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     h2 {
       margin: 0px;
       font-size: 30px;
@@ -144,7 +162,7 @@ export default {
 
     p {
       margin: 0px;
-      font-size: 60px;
+      font-size: 50px;
     }
   }
 
