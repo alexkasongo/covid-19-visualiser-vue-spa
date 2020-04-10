@@ -52,11 +52,12 @@ export default {
         const deaths = []
         const recovered = []
         const date = []
-        const days = []
+        const newCases = []
 
         // initial data loop
         for (let data of response.data) {
-            america.push(data);
+          console.log(`WashingtonChart.vue - 59 - variable`, data);
+          america.push(data);
         }
 
         // second data loop, goes deeper and allows selecting of countries, total deaths etc
@@ -67,7 +68,7 @@ export default {
           // format date
           date.push(this.moment(america[i].Date).format('D/M'))
           // get number of days
-          days.push(america[i].Confirmed.length)
+          newCases.push(america[i].Active.length)
           // generate random colors
           coloR.push(dynamicColors());
         }
@@ -85,7 +86,7 @@ export default {
             data: {
                 labels: date,
                 datasets: [{
-                  label: 'New Cases by Day: Last 30 Days',
+                  label: `New Cases by Day: Last ${confirmed.length } Days`,
                   data: confirmed,
                   backgroundColor: '#4BC0C0',
                   // borderWidth: 2,
@@ -107,7 +108,7 @@ export default {
                 ]
             },
             options: {
-              // maintainAspectRatio: false,
+              maintainAspectRatio: false,
                 scales: {
                     yAxes: [{
                         ticks: {
@@ -135,8 +136,10 @@ export default {
 <style scoped lang="scss">
 .washingtonChart {
   
-  background-color: #2D3143;
+  height: 290px;
+  background-color: #1C1F2B;
   border-radius: 4px;
+  margin: 5px;
 
   &__type {
     margin: 0px;

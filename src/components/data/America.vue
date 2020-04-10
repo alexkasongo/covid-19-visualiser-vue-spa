@@ -15,7 +15,9 @@
       </div>
     </div> -->
     <div class="states" v-for="state in updateSummary" :key="state.componentKey">
-      <p class="america__states">{{state.Province}} ({{state.Confirmed}} Cases)</p>
+      <div class="states__container">
+        <p class="america__states">{{state.Province}} ({{state.Confirmed}} Cases)</p>
+      </div>
     </div>
   </div>
 </template>
@@ -182,6 +184,8 @@ export default {
   &__states {
     text-align: right;
     margin: 0px;
+
+
   }
 }
 
@@ -193,6 +197,7 @@ export default {
   align-items: center;
   cursor: pointer;
   padding: 2px 5px;
+  background-color: #1C1F2B;
 }
 .states:hover {
   background-color: brown;

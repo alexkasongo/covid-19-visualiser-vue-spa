@@ -78,6 +78,16 @@ export default {
   height: 600px;
   overflow: auto;
 
+  &__stats {
+    height: 295px;
+    // background: forestgreen;
+  }
+
+  &__chart {
+    height: 295px;
+    // background: firebrick;
+  }
+
   &__summary {
     display: flex;
     flex-direction: column;
@@ -98,13 +108,13 @@ export default {
     border-radius: 4px;
     h2 {
       margin: 0px;
-      font-size: 36px;
+      font-size: 30px;
       padding: 10px 0px 0px 0px;
     }
 
     p {
       margin: 0px;
-      font-size: 60px;
+      font-size: 50px;
     }
   }
 
@@ -114,12 +124,12 @@ export default {
     border-radius: 4px;
     h2 {
       margin: 0px;
-      font-size: 36px;
+      font-size: 30px;
     }
 
     p {
       margin: 0px;
-      font-size: 60px;
+      font-size: 50px;
     }
   }
 
@@ -129,7 +139,7 @@ export default {
     border-radius: 4px;
     h2 {
       margin: 0px;
-      font-size: 36px;
+      font-size: 30px;
     }
 
     p {
