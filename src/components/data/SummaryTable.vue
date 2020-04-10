@@ -1,9 +1,11 @@
 <template>
   <div class="table">
+    <!-- <FilterBar /> -->
     <div class="table__chart">
-      <vuetable
+      <vuetable ref="vuetable"
       api-url="https://api.covid19api.com/summary"
       :fields="fields"
+      :append-params="moreParams"
       data-path="Countries"
       pagination-path=""
     ></vuetable>
@@ -19,11 +21,14 @@
 
 <script>
 import Vuetable from 'vuetable-2'
+//  import FilterBar from './FilterBar'
+import Vue from 'vue'
 
 export default {
   name: 'Summary',
   components: {
     Vuetable,
+    // FilterBar
   },
   data() {
     return{
@@ -75,11 +80,28 @@ export default {
           //     : '<span class="ui pink label"><i class="large woman icon"></i>Female</span>'
           // }
         }
-      ]
+      ],
+      moreParams: {}
     }
   },
-  methods: {},
+  methods: {
+    onFilterSet (filterText) {
+      console.log(`SummaryTable.vue - 86 - variable`, filterText);
+      this.moreParams = {
+            'filter': filterText
+        }
+        Vue.nextTick( () => this.$refs.vuetable.refresh())
+    },
+    onFilterReset () {
+      this.moreParams = {}
+        Vue.nextTick( () => this.$refs.vuetable.refresh())
+      console.log(`SummaryTable.vue - 89 - filter-reset`);
+    }
+  },
   mounted () {
+    this.$events.$on('filter-set', eventData => this.onFilterSet(eventData))
+    // eslint-disable-next-line no-unused-vars
+    this.$events.$on('filter-reset', e => this.onFilterReset())
 
     this.$http
       .get('https://api.covid19api.com/summary')
