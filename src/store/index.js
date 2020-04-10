@@ -11,7 +11,9 @@ export default new Vuex.Store({
   },
   getters: {
     summaryFeed: state => {
-      return state.summaryFeed[0]
+      if (state.summaryFeed[0]) {
+        return state.summaryFeed[0]
+      }
     },
     filtered: state => {
       if (state.summaryFeed[0]) {
@@ -20,13 +22,6 @@ export default new Vuex.Store({
         })
       }
     },
-    // filtered: state => {
-    //     return state.summaryFeed[0].filter(function(item) {
-    //       console.log(`index.js - 18 - item`, item);
-    //       return item.Province === "Washington"
-    //     }
-    //   );
-    // },
     globalFeed: state => {
       return state.globalFeed
     },

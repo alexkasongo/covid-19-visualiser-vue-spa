@@ -78,6 +78,9 @@ export default {
     };
   },
   computed: {
+    covidData() {
+        return this.$store.getters.summaryFeed
+    },
     options() {
       return {
         onEachFeature: this.onEachFeatureFunction
@@ -100,7 +103,7 @@ export default {
         return () => {};
       }
       return (feature, layer) => {
-          console.log(`Map.vue - 103 - variable`, layer);
+        console.log(`Map.vue - 106 - variable`, this.covidData);
         layer.bindTooltip(
           "<div>" +
             feature.properties.name +
@@ -109,11 +112,6 @@ export default {
             "</div>",
           { permanent: false, sticky: true }
         );
-        // layer.setStyle({
-        //     weight: 2,
-        //     color: '#666',
-        //     fillColor: 'white'
-        // });
         layer.on("mouseover",function(){
             layer.setStyle({
                 weight: 2,
