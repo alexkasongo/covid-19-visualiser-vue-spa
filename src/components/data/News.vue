@@ -97,7 +97,6 @@ export default {
     max-width: 600px;
     text-align: center;
     margin: 0px auto 5px auto;
-    // background-color: #2D3143;
 
     &--container {
       background-color: #1C1F2B;
@@ -146,7 +145,6 @@ export default {
     position: relative;
     margin: auto;
     overflow: hidden;
-    // width: 580px;
 }
 .image-box img {
     max-width: 100%;

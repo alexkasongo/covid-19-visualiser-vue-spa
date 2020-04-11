@@ -32,12 +32,6 @@ export default {
   },
   data() {
     return{
-      filterText: '',
-      // options: [
-      //   texts: {
-      //     filterPlaceholder: 'filter...'
-      //   }
-      // ],
       fields: [
         {
           name: "Country",

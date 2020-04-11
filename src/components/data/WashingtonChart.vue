@@ -71,11 +71,7 @@ export default {
           // generate random colors
           coloR.push(dynamicColors());
         }
-
-        // NOTE currently not being used but should be used if app grows
-        // dispatch state/data to store for state manangenet
-        // this.$store.dispatch("updateSummary", americaFeed);
-
+        
         var chart = this.$refs.chart;
         var ctx = chart.getContext("2d");
         Chart.defaults.global.defaultFontColor = '#eee';
@@ -88,23 +84,9 @@ export default {
                   label: `New Cases by Day: Last ${confirmed.length } Days`,
                   data: confirmed,
                   backgroundColor: '#4BC0C0',
-                  // borderWidth: 2,
                   minBarLength: 2,
                 },
-                // another line graph
-                // { 
-                //   label: 'Confirmed Deaths',
-                //   data: deaths,
-                //   backgroundColor: '#FF6384',
-                //   borderWidth: 2
-                // },
-                // { 
-                //   label: 'Confirmed Recoveries',
-                //   data: recovered,
-                //   backgroundColor: '#eee',
-                //   borderWidth: 2
-                // }
-                ]
+              ]
             },
             options: {
               maintainAspectRatio: false,
