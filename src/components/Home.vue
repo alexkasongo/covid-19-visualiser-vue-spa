@@ -166,7 +166,7 @@ export default {
     display: grid;
     grid-template-columns: 2fr 3fr 1fr;
     grid-gap: 5px;
-    margin: 0px 0px 50px 0px;
+    margin: 0px 0px 5px 0px;
   }
 
 }

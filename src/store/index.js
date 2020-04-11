@@ -12,13 +12,24 @@ export default new Vuex.Store({
   getters: {
     summaryFeed: state => {
       if (state.summaryFeed[0]) {
-        return state.summaryFeed[0].sort((a, b) => (a.Province < b.Province) ? -1 : 1)
+        return state.summaryFeed[0]
+        // return state.summaryFeed[0].sort((a, b) => (a.Province < b.Province) ? -1 : 1)
       }
     },
     filtered: state => {
       if (state.summaryFeed[0]) {
         return state.summaryFeed[0].filter((state) => {
           return state.Province === "Washington"
+        })
+      }
+    },
+    slicedArray: state => {
+      if (state.summaryFeed[0]) {
+        return state.summaryFeed[0].filter((state) => {
+          const data = state.Province === "Washington"
+          // let sliced = data.slice(0, 1)
+          // return state.Province === "Washington"
+          return data
         })
       }
     },
