@@ -11,7 +11,6 @@
     </div>
     <div class="home__united-states">
       <Washington />
-      <!-- <News /> -->
       <Map />
       <America />
     </div>
@@ -120,9 +119,13 @@ export default {
     padding: 5px;
     border-radius: 4px;
     color: #fff;
-    font-size: 16px;
     margin: 0px;
     text-align: left;
+    font-size: 12px;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+    }
   }
   &__title-two {
     padding: 5px;
@@ -163,9 +166,12 @@ export default {
 
   &__united-states {
     display: grid;
-    grid-template-columns: 2fr 3fr 1fr;
-    grid-gap: 5px;
-    margin: 0px 0px 5px 0px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 3fr 1fr;
+      grid-gap: 5px;
+      margin: 0px 0px 5px 0px;
+    }
   }
 
 }
