@@ -53,7 +53,7 @@ export default {
   },
   mounted () {
 
-    var url = 'http://newsapi.org/v2/everything?' +
+    var url = 'https://newsapi.org/v2/everything?' +
           'q=Covid-19&' +
           'from=2020-04-07&' +
           'sortBy=popularity&' +

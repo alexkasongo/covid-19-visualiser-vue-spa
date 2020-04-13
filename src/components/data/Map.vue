@@ -73,7 +73,7 @@ export default {
       fillColor: "#A52A2A",
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
-        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
       marker: latLng(47.8279, -122.3054),
       covid: []
     };
