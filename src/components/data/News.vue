@@ -100,7 +100,7 @@ export default {
 
     &--container {
       background-color: #1C1F2B;
-      margin: 5px 5px;
+      margin: 0px 5px;
       border-radius: 4px;
     }
   }

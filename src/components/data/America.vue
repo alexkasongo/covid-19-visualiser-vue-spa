@@ -73,6 +73,7 @@ export default {
   border-radius: 4px;
   height: 600px;
   overflow: auto;
+  
 
   &__summary {
     display: flex;

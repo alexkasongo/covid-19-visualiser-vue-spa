@@ -35,24 +35,29 @@ export default {
   },
   mounted () {
     this.$http
-      .get('https://api.covid19api.com/live/country/south-africa/status/confirmed')
+      .get('https://api.covid19api.com/live/country/united-states/status/confirmed')
       .then(response => {
         let america = [];
-        let coloR = [];
+        // let coloR = [];
+
+        const test = []
+        // const washingtonData = test.filter((state) => {
+        //   return state
+        // })
 
         // generate dynamic colors
-        var dynamicColors = function() {
-            var r = Math.floor(Math.random() * 255);
-            var g = Math.floor(Math.random() * 255);
-            var b = Math.floor(Math.random() * 255);
-            return "rgb(" + r + "," + g + "," + b + ")";
-         };
+        // var dynamicColors = function() {
+        //     var r = Math.floor(Math.random() * 255);
+        //     var g = Math.floor(Math.random() * 255);
+        //     var b = Math.floor(Math.random() * 255);
+        //     return "rgb(" + r + "," + g + "," + b + ")";
+        //  };
 
-        const confirmed = []
-        const deaths = []
-        const recovered = []
-        const date = []
-        const newCases = []
+        // const confirmed = []
+        // const deaths = []
+        // const recovered = []
+        // const date = []
+        // const newCases = []
 
         // initial data loop
         for (let data of response.data) {
@@ -61,17 +66,23 @@ export default {
 
         // second data loop, goes deeper and allows selecting of countries, total deaths etc
         for (var i = 0; i < america.length; i++) {
-          confirmed.push(america[i].Confirmed)
-          deaths.push(america[i].Deaths)
-          recovered.push(america[i].Recovered)
-          // format date
-          date.push(this.moment(america[i].Date).format('D/M'))
-          // get number of days
-          newCases.push(america[i].Active.length)
-          // generate random colors
-          coloR.push(dynamicColors());
+
+          // confirmed.push(america[i].Confirmed)
+          // deaths.push(america[i].Deaths)
+          // recovered.push(america[i].Recovered)
+          // date.push(this.moment(america[i].Date).format('D/M'))
+          // newCases.push(america[i].Active.length)
+          // coloR.push(dynamicColors());
+          test.push(america[i])
         }
-        
+
+        console.log(`WashingtonChart.vue - 76 - variable`, test);
+
+        // washington data only
+        // const washington = state.summaryFeed[0].filter((state) => {
+        //   return state.Province === "Washington"
+        // })
+
         var chart = this.$refs.chart;
         var ctx = chart.getContext("2d");
         Chart.defaults.global.defaultFontColor = '#eee';
@@ -79,11 +90,13 @@ export default {
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: date,
+                labels: 'date',
+                // labels: date,
                 datasets: [{
                   label: `New Cases by Day`,
                   // label: `New Cases by Day: Last ${confirmed.length } Days`,
-                  data: confirmed,
+                  data: 'confirmed',
+                  // data: confirmed,
                   backgroundColor: '#4BC0C0',
                   minBarLength: 2,
                 },
@@ -109,7 +122,10 @@ export default {
   computed: {
     ...mapGetters({
         updateSummary: "summaryFeed"
-    })
+    }),
+    filteredSum() {
+        return this.$store.getters.filtered
+    }
   }
 }
 </script>

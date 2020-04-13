@@ -20,7 +20,8 @@
       </div>
     </div>
     <div class="washington__chart">
-      <WashingtonChart />
+      <!-- <WashingtonChart /> -->
+      <News />
     </div>
   </div>
 </template>
@@ -28,7 +29,8 @@
 <script>
 import { mapGetters } from "vuex";
 import Chart from 'chart.js';
-import WashingtonChart from '@/components/data/WashingtonChart'
+// import WashingtonChart from '@/components/data/WashingtonChart'
+import News from '@/components/data/News'
 
 export default {
   name: 'Washington',
@@ -36,7 +38,8 @@ export default {
     msg: String
   },
   components: {
-    WashingtonChart
+    // WashingtonChart
+    News
   },
   data() {
     return{
@@ -82,8 +85,16 @@ export default {
   background-color: #2D3143;
   border-radius: 4px;
   height: 600px;
-  overflow: auto;
+  // overflow: auto;
   cursor: default;
+    ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
 
   &__stats {
     // height: 295px;
@@ -94,7 +105,7 @@ export default {
 
   &__chart {
     height: 295px;
-    // background: firebrick;
+    overflow: hidden;
   }
 
   &__summary {

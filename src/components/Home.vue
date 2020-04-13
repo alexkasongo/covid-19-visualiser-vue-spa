@@ -69,6 +69,16 @@ export default {
   
   max-width: 1200px;
   margin: 0px auto;
+   overflow: scroll;
+    overflow-x: hidden;
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
 
   &__global {
     display: flex;
