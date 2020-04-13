@@ -27,8 +27,8 @@
     </div>
     <div class="home__grid">
       <div class="home__summary">
-        <!-- <Summary /> -->
-        <SummaryTable />
+        <Summary />
+        <!-- <SummaryTable /> -->
       </div>
     </div>
   </div>
@@ -40,7 +40,8 @@ import Global from '@/components/data/Global'
 // import News from '@/components/data/News'
 import Washington from '@/components/data/Washington'
 import Map from '@/components/data/Map'
-import SummaryTable from '@/components/data/SummaryTable'
+// import SummaryTable from '@/components/data/SummaryTable'
+import Summary from '@/components/data/Summary'
 
 export default {
   name: 'Home',
@@ -53,7 +54,8 @@ export default {
     // News,
     Washington,
     Map,
-    SummaryTable
+    // SummaryTable,
+    Summary
   },
   data() {
     return{
