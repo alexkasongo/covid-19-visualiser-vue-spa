@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- <h1 class="home__logo">Keeping Up With The Covid</h1> -->
     <div class="home__logo-grid">
       <div class="home__logo-container-one"></div>
       <div class="home__title-container">
@@ -11,7 +10,7 @@
     </div>
     <div class="home__united-states">
       <Washington />
-      <!-- <Map /> -->
+      <Map />
       <America />
     </div>
 
@@ -26,7 +25,7 @@
     </div>
     <div class="home__grid">
       <div class="home__summary">
-        <Summary />
+        <!-- <Summary /> -->
         <!-- <SummaryTable /> -->
       </div>
     </div>
@@ -38,9 +37,9 @@ import America from '@/components/data/America'
 import Global from '@/components/data/Global'
 // import News from '@/components/data/News'
 import Washington from '@/components/data/Washington'
-// import Map from '@/components/data/Map'
+import Map from '@/components/data/Map'
 // import SummaryTable from '@/components/data/SummaryTable'
-import Summary from '@/components/data/Summary'
+// import Summary from '@/components/data/Summary'
 
 export default {
   name: 'Home',
@@ -52,9 +51,9 @@ export default {
     Global,
     // News,
     Washington,
-    // Map,
+    Map,
     // SummaryTable,
-    Summary
+    // Summary
   },
   data() {
     return{
@@ -166,6 +165,10 @@ export default {
 
   &__united-states {
     display: grid;
+    grid-template-columns: 1fr;
+    div {
+      height: 600px;
+    }
 
     @media (min-width: 768px) {
       grid-template-columns: 2fr 3fr 1fr;
@@ -174,5 +177,8 @@ export default {
     }
   }
 
+  // .map {
+  //   height: 500px;
+  // }
 }
 </style>

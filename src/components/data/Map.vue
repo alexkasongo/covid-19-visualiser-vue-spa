@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <div>
+    <div class="map">
       <!-- <span v-if="loading">Loading...</span> -->
       <!-- <span v-if="loading">Loading...</span> -->
       <!-- <label for="checkbox">GeoJSON Visibility</label>
@@ -151,3 +151,10 @@ export default {
   }
 };
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+// .map {
+//   height: 600px;
+// }
+</style>

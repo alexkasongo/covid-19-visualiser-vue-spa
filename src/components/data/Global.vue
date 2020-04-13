@@ -78,8 +78,12 @@ export default {
 
   &__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 5px;
+
+    @media (min-width: 768px) {
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 
   &__totalConfirmed {
@@ -96,11 +100,14 @@ export default {
   }
 
   &--card {
-    padding: 20px;
+    padding: 10px;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (min-width: 768px) {
+       padding: 20px;
+    }
   }
 
   &__type {
@@ -114,9 +121,12 @@ export default {
   }
 
   &__number {
-    font-size: 60px;
+    font-size: 30px;
     margin: 0px 0px 0px 0px;
     color: #2c3e50;
+    @media (min-width: 768px) {
+       font-size: 60px;
+    }
   }
 
 }
