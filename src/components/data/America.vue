@@ -85,6 +85,11 @@ export default {
 
   &__states {
     margin: 0px;
+    font-size: 18px;
+    padding: 5px 0px;
+    @media (min-width: 768px) {
+       font-size: 14px;
+    }
   }
 }
 

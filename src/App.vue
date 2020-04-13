@@ -47,11 +47,15 @@ body {
 }
 
 .app {
+
   &__footer {
+    max-width: 1200px;
+    margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 30px 10px;
+    padding: 30px 10px;
   }
   &__footer-links {
     img {

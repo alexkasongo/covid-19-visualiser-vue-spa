@@ -81,7 +81,8 @@ export default {
             data: {
                 labels: date,
                 datasets: [{
-                  label: `New Cases by Day: Last ${confirmed.length } Days`,
+                  label: `New Cases by Day`,
+                  // label: `New Cases by Day: Last ${confirmed.length } Days`,
                   data: confirmed,
                   backgroundColor: '#4BC0C0',
                   minBarLength: 2,
