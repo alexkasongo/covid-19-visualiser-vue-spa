@@ -11,7 +11,7 @@
     </div>
     <div class="home__united-states">
       <Washington />
-      <Map />
+      <!-- <Map /> -->
       <America />
     </div>
 
@@ -38,7 +38,7 @@ import America from '@/components/data/America'
 import Global from '@/components/data/Global'
 // import News from '@/components/data/News'
 import Washington from '@/components/data/Washington'
-import Map from '@/components/data/Map'
+// import Map from '@/components/data/Map'
 // import SummaryTable from '@/components/data/SummaryTable'
 import Summary from '@/components/data/Summary'
 
@@ -52,7 +52,7 @@ export default {
     Global,
     // News,
     Washington,
-    Map,
+    // Map,
     // SummaryTable,
     Summary
   },
@@ -121,7 +121,7 @@ export default {
     color: #fff;
     margin: 0px;
     text-align: left;
-    font-size: 12px;
+    font-size: 14px;
 
     @media (min-width: 768px) {
       font-size: 16px;

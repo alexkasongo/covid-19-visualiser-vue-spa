@@ -1,4 +1,11 @@
 # covid-19-visualiser
+```
+Personal Covid-19 dashboard, created to keep family and friends up to date with Covid statistics 
+in Washington State. Additional stats include, the rest of the US States and world Countries. 
+
+This app is built using Vue 3 Cli and it is component driven. The base logic has been built and open to 
+contribution.
+```
 
 ## Project setup
 ```
