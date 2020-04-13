@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <!-- <h1 class="home__logo">Keeping Up With The Covid</h1> -->
-    
     <div class="home__logo-grid">
       <div class="home__logo-container-one"></div>
       <div class="home__title-container">
@@ -36,7 +35,6 @@
 </template>
 
 <script>
-// import Summary from '@/components/data/Summary'
 import America from '@/components/data/America'
 import Global from '@/components/data/Global'
 // import News from '@/components/data/News'
@@ -50,7 +48,6 @@ export default {
     msg: String
   },
   components: {
-    // Summary,
     America,
     Global,
     // News,
