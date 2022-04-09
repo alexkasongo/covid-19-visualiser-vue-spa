@@ -12,7 +12,7 @@
     "chart.js": "^2.9.3",
     "core-js": "^3.6.4",
     "leaflet": "^1.6.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "vue": "^2.6.11",
     "vue-events": "^3.1.0",
     "vue2-leaflet": "^2.5.2",
